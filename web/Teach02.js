@@ -1,8 +1,8 @@
-function click() {
+function clickMe() {
   alert("Clicked!");
 }
 
 function change() {
   var color = document.getElementById("color").value;
-  document.getElementById("div1").style.background-color = color;
+  document.getElementById("div1").style.background = color;
 }
