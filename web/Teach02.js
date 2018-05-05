@@ -3,6 +3,6 @@ function click {
 }
 
 function change {
-  color = document.getElementById(color).value;
-  document.getElementById(div1).style.background = color;
+  var color = document.getElementById("color").value;
+  document.getElementById("div1").style.background = color;
 }
