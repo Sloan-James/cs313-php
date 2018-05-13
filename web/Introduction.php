@@ -20,7 +20,7 @@ and open the template in the editor.
                if(!in_array($page, $notWanted)){
                    $link = 'web/' . $page;
                    $safeName = strtoupper(str_replace('.html', '', $page));
-                   echo '<a href="' . $link . '">' . $safeName . '</a>';
+                   echo '<a href="' . $link . '">' . $safeName . '</a> </br>';
 
                }
             }
