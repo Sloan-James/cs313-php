@@ -7,29 +7,18 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8"></meta>
-        <title></title>
+        <title>Introduction</title>
     </head>
     <body>
-        <?php
-            $pages = scandir('.');
-            $notWanted = array('.','..', 'index.php');
-
-            echo '<div class="menu">';
-
-            foreach($pages as $page){
-               if(!in_array($page, $notWanted)){
-                   $link = 'web/' . $page;
-                   $safeName = strtoupper(str_replace('.html', '', $page));
-                   echo '<a href="' . $link . '">' . $safeName . '</a> </br>';
-
-               }
-            }
-
-            echo '</div>';
+        <?php 
+            include nav.php;
         ?>
         <h1>Introduction</h1>
-        <a href="Assignments.php">Assignments</a>
         <h2>James Sloan</h2>
-        <p>I </p>
+        <p>I really enjoy creating and fixing things. I hope to 
+        get plenty of enjoyment in the software engineering field. 
+        I play video games in my free time. I currently play Everquest on a 
+        progression server.</p>
+        <img src='Images/James Photo.jpeg'>
     </body>
 </html>
