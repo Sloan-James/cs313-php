@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php 
-            include nav.php;
+            include 'nav.php';
         ?>
         <div>Coming Soon</div>
     </body>

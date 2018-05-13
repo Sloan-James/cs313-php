@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php 
-            include nav.php;
+            include 'nav.php';
         ?>
         <h1>Introduction</h1>
         <h2>James Sloan</h2>
@@ -19,6 +19,6 @@ and open the template in the editor.
         get plenty of enjoyment in the software engineering field. 
         I play video games in my free time. I currently play Everquest on a 
         progression server.</p>
-        <img src='Images/James Photo.jpeg'>
+        <img src="Images/James Photo.jpeg">
     </body>
 </html>
