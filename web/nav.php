@@ -2,17 +2,17 @@
     $pages = scandir('.');
     $notWanted = array('.','..', 'index.php', 'nav.php');
 
-    echo '<div class="menu">';
+    echo '<ul class="menu">';
 
     foreach($pages as $page){
        if(!in_array($page, $notWanted)){
            $link = $page;
            $safeName = strtoupper(str_replace('.html', '', $page));
-           echo '<a href="' . $link . '">' . $safeName . '</a> </br>';
+           echo '<li><a href="' . $link . '">' . $safeName . '</a></li>';
 
        }
     }
 
-    echo '</div>';
+    echo '</ul>';
 ?>
 

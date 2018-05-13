@@ -8,6 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Assignments</title>
+        <link rel="stylesheet" type="text/css" href="Nav.css">
     </head>
     <body>
         <?php 

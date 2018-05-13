@@ -9,6 +9,7 @@ and open the template in the editor.
         <meta charset="UTF-8"></meta>
         <title>Introduction</title>
         <link rel="stylesheet" type="text/css" href="Introduction.css">
+        <link rel="stylesheet" type="text/css" href="Nav.css">
     </head>
     <body>
         <?php 
