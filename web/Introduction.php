@@ -15,10 +15,10 @@ and open the template in the editor.
         ?>
         <h1>Introduction</h1>
         <h2>James Sloan</h2>
-        <p>I really enjoy creating and fixing things. I hope to 
+        <p id="Intro">I really enjoy creating and fixing things. I hope to 
         get plenty of enjoyment in the software engineering field. 
         I play video games in my free time. I currently play Everquest on a 
         progression server.</p>
-        <img src="Images/James Photo.jpeg">
+        <img src="Images/James Photo.jpeg" height>
     </body>
 </html>
