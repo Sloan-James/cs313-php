@@ -11,25 +11,24 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        
-$pages = scandir('web');
-$notWanted = array('.','..', 'index.php');
+            $pages = scandir('.');
+            $notWanted = array('.','..', 'index.php');
 
-echo '<div class="menu">';
+            echo '<div class="menu">';
 
-foreach($pages as $page){
-   if(!in_array($page, $notWanted)){
-       $link = 'web/' . $page;
-       $safeName = strtoupper(str_replace('.html', '', $page));
-       echo '<a href="' . $link . '">' . $safeName . '</a>';
-       
-   }
-}
+            foreach($pages as $page){
+               if(!in_array($page, $notWanted)){
+                   $link = 'web/' . $page;
+                   $safeName = strtoupper(str_replace('.html', '', $page));
+                   echo '<a href="' . $link . '">' . $safeName . '</a>';
 
-echo '</div>';
+               }
+            }
+
+            echo '</div>';
         ?>
         <h1>Introduction</h1>
-        <a href="Assignments.html">Assignments</a>
+        <a href="Assignments.php">Assignments</a>
         <h2>James Sloan</h2>
         <p>I </p>
     </body>
