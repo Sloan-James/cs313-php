@@ -2,10 +2,10 @@
 session_start();
 //$_SESSION["item"] = $_POST["item"];
 //$_SESSION["item"]["price"] = $_POST["price"];
-
-for ($i=1; $i <= 3; $i++){    
-$_SESSION["cart"][$i]["qty"] = 0;
+if( !isset($_SESSION["cart"]["qty"])){
+    $_SESSION["cart"]["qty"] = 0;
 }
+
 $products[1]["item"] = "Camera";
 $products[2]["item"] = "External Hard Drive";
 $products[3]["item"] = "Wrist Watch";
@@ -13,14 +13,16 @@ $products[1]["price"] = 1500;
 $products[2]["price"] = 800;
 $products[3]["price"] = 300;
 
-$cart = 0;
+
 
 //Add
 if (isset($_GET['add'])){
     $i = $_GET['add'];
-    //$qty = $_SESSION["cart"][$i]['qty'] + 1;
-    $_SESSION["cart"][$i]['item'] = $products[$i]["item"];
-    $_SESSION["cart"][$i]['price'] = $products[$i]["price"];
+    if(!isset($_SESSION["cart"][$i])){
+        $_SESSION["cart"][$i]["qty"] = 0;
+        $_SESSION["cart"][$i]['item'] = $products[$i]["item"];
+        $_SESSION["cart"][$i]['price'] = $products[$i]["price"];
+    }
     $_SESSION["cart"][$i]['qty']++;
     $cart++;
 }
@@ -31,6 +33,8 @@ if (isset($_GET["delete"])){
     if ($_SESSION["cart"][$i]["qty"] > 0){   
         $_SESSION["cart"][$i]["qty"]--;
         $cart--;
+    } else{
+        unset($_SESSION["cart"][$i]);
     }
 }
 ?>
