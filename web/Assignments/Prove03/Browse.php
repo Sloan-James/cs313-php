@@ -2,6 +2,14 @@
 session_start();
 $_SESSION["item"] = $_POST["item"];
 $_SESSION["item"]["price"] = $_POST["price"];
+
+//Add
+if (isset($_GET["add"])){
+    $i = $_GET["add"];
+    $qty = $_SESSION[$i]["qty"] + 1;
+    $_SESSION[$i]["cart"] = $i;
+    $_SESSION[$i]["qty"] = $qty;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,6 +28,7 @@ $_SESSION["item"]["price"] = $_POST["price"];
         </style>
     </head>
     <body>
+        <form action="Cart.php" method="post">
         <form action="Browse.php" method="post">
             <table style="width:100%">
                 <tr>
@@ -30,7 +39,7 @@ $_SESSION["item"]["price"] = $_POST["price"];
                 <form action="addCart.php" method="post">
                     <td name='item'>Camera <img src="product-images/camera.jpg"></td>
                     <td name='price'>$1,500</td>
-                    <td><input type="submit" value="Add to Cart"></td>
+                    <td><a href="?add=1">Add to Cart</a><input type="submit" value="Add to Cart"></td>
                 </form>
                 </tr>
                 <tr>
@@ -48,6 +57,8 @@ $_SESSION["item"]["price"] = $_POST["price"];
                 </form>
                 </tr>
             </table>
+        </form>
+            <input type="submit" value="View Cart">
         </form>
     </body>
 </html>
