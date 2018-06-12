@@ -13,11 +13,15 @@ $_SESSION["item"]["price"] = $_POST["price"];
                 width: 150px;
                 height: 150px;
             }
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
         </style>
     </head>
     <body>
         <form action="Browse.php" method="post">
-            <table>
+            <table style="width:100%">
                 <tr>
                     <th>Item</th>
                     <th>Price</th>
