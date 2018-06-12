@@ -6,13 +6,14 @@ session_start();
 $_SESSION['1']['qty'] = 0;
 
 //Add
+/*
 if (isset($_GET['add'])){
     $i = $_GET['add'];
     $qty = $_SESSION[$i]['qty'] + 1;
     $_SESSION[$i]['item'] = $_POST['item'];
     $_SESSION[$i]['cart'] = $i;
     $_SESSION[$i]['qty'] = $qty;
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html>
