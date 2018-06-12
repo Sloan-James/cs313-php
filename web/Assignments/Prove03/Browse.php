@@ -3,6 +3,8 @@ session_start();
 $_SESSION["item"] = $_POST["item"];
 $_SESSION["item"]["price"] = $_POST["price"];
 
+$_SESSION[1]["qty"] = 0;
+
 //Add
 if (isset($_GET["add"])){
     $i = $_GET["add"];
