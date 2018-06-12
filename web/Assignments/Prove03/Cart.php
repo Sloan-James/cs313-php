@@ -8,8 +8,9 @@ session_start();
         <title></title>
     </head>
     <body>
+        <p>Hello</p>
         <?php
-         echo $_SESSION[0][]
+         echo $_SESSION[0]["item"];
         ?>
     </body>
 </html>
