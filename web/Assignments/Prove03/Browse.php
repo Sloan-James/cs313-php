@@ -12,7 +12,7 @@ $_SESSION["cart"][3]["qty"] = 0;
 if (isset($_GET['add'])){
     $i = $_GET['add'];
     $qty = $_SESSION["cart"][$i]['qty'] + 1;
-    $_SESSION["cart"][$i]['item'] = $_POST['item'];
+    $_SESSION["cart"][$i]['item'] = htmlspecialchars($_POST["item"]);
     $_SESSION["cart"][$i]['cart'] = $i;
     $_SESSION["cart"][$i]['qty'] = $qty;
 }
