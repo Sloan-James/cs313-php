@@ -3,7 +3,7 @@ session_start();
 //$_SESSION["item"] = $_POST["item"];
 //$_SESSION["item"]["price"] = $_POST["price"];
 
-$_SESSION["1"]["C"] = 0;
+$_SESSION["1"] = 0;
 
 //Add
 /*
