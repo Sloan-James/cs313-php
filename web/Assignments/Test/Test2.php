@@ -38,7 +38,9 @@ foreach ($_SESSION["places"] as $place)
 	</ul>
 
 	<p>Comments: <?=$_SESSION["comments"]?></p>
-
+<?
+print_r($_SESSION);
+?>
 </body>
 
 
