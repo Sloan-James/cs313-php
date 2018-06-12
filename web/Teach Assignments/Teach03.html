@@ -1,16 +1,38 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<head>
+  <meta charset="utf-8">
+  <title> Team03</title>
+   
+</head>
+
+<body>
+
+<form action="team03.php" method="post">
+Name: <input type="text" name="name"><br>
+Email: <input type="text" name="email"><br><br>
+Major: <br><input type="radio" name="major" value="computerScience"> Computer Science<br>
+  <input type="radio" name="major" value="Web Design"> Web Design and Development<br>
+  <input type="radio" name="major" value="Computer Info"> Computer Information Technology<br>
+  <input type="radio" name="major" value="Computer Engineer"> Computer Engineering<br><br>
+Comments: <br><textarea rows="4" cols="50" name="comments"></textarea> <br><br>
+
+Continents you visited:<br>
+<input type="checkbox" name="country[]" value="North America">North America<br>
+<input type="checkbox" name="country[]" value="South America">South America<br>
+<input type="checkbox" name="country[]" value="Europe">Europe<br>
+<input type="checkbox" name="country[]" value="Asia">Asia<br>
+<input type="checkbox" name="country[]" value="Australia">Australia<br>
+<input type="checkbox" name="country[]" value="Africa">Africa<br>
+<input type="checkbox" name="country[]" value="Antarctia">Antarctica<br>
+
+
+
+
+
+  <br><br>
+  
+<input type="submit" value="Submit">
+</form>
 </html>
+</body>
