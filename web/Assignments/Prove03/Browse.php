@@ -3,17 +3,19 @@ session_start();
 //$_SESSION["item"] = $_POST["item"];
 //$_SESSION["item"]["price"] = $_POST["price"];
 
-$_SESSION["C"] = 0;
+$_SESSION["cart"][1]["qty"] = 0;
+$_SESSION["cart"][2]["qty"] = 0;
+$_SESSION["cart"][3]["qty"] = 0;
 
 //Add
-/*
+
 if (isset($_GET['add'])){
     $i = $_GET['add'];
-    $qty = $_SESSION[$i]['qty'] + 1;
-    $_SESSION[$i]['item'] = $_POST['item'];
-    $_SESSION[$i]['cart'] = $i;
-    $_SESSION[$i]['qty'] = $qty;
-}*/
+    $qty = $_SESSION["cart"][$i]['qty'] + 1;
+    $_SESSION["cart"][$i]['item'] = $_POST['item'];
+    $_SESSION["cart"][$i]['cart'] = $i;
+    $_SESSION["cart"][$i]['qty'] = $qty;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,14 +52,14 @@ if (isset($_GET['add'])){
                 <form action="addCart.php" method="post">
                     <td name='item'>External Hard Drive<img src="product-images/external-hard-drive.jpg"></td>
                     <td name='price'>$800</td>
-                    <td><input type="submit" value="Add to Cart"></td>
+                    <td><a href="?add=2">Add to Cart</a><input type="submit" value="Add to Cart"></td>
                 </form>
                 </tr>
                 <tr>
                 <form action="addCart.php" method="post">
                     <td name='item'>Wrist Watch<img src="product-images/watch.jpg"></td>
                     <td name='price'>$300</td>
-                    <td><input type="submit" value="Add to Cart"></td>
+                    <td><a href="?add=3">Add to Cart</a><input type="submit" value="Add to Cart"></td>
                 </form>
                 </tr>
             </table>
