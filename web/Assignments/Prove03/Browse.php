@@ -51,6 +51,7 @@ if (isset($_GET["delete"])){
             table, th, td {
                 border: 1px solid black;
                 border-collapse: collapse;
+                width: 33%;
             }
         </style>
     </head>
