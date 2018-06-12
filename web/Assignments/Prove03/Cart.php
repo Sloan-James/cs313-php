@@ -10,7 +10,7 @@ session_start();
     <body>
         <p>Hello</p>
         <?php
-         echo $_SESSION[0];
+         print_r($_SESSION);
         ?>
     </body>
 </html>
