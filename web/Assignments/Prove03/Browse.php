@@ -21,6 +21,7 @@ if (isset($_GET['add'])){
     $_SESSION["cart"][$i]['item'] = $products[$i]["item"];
     $_SESSION["cart"][$i]['price'] = $products[$i]["price"];
     $_SESSION["cart"][$i]['qty'] = $qty;
+    echo "Added ". $products[$i]["item"] ." to the Cart";
 }
 ?>
 <!DOCTYPE html>
