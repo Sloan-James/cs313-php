@@ -13,15 +13,25 @@ $products[1]["price"] = 1500;
 $products[2]["price"] = 800;
 $products[3]["price"] = 300;
 
-//Add
+$cart = 0;
 
+//Add
 if (isset($_GET['add'])){
     $i = $_GET['add'];
-    $qty = $_SESSION["cart"][$i]['qty'] + 1;
+    //$qty = $_SESSION["cart"][$i]['qty'] + 1;
     $_SESSION["cart"][$i]['item'] = $products[$i]["item"];
     $_SESSION["cart"][$i]['price'] = $products[$i]["price"];
-    $_SESSION["cart"][$i]['qty'] = $qty;
-    echo "Added ". $products[$i]["item"] ." to the Cart";
+    $_SESSION["cart"][$i]['qty']++;
+    $cart++;
+}
+
+//Delete
+if (isset($_GET["delete"])){
+    $i = $_GET["delete"];
+    if ($_SESSION["cart"][$i]["qty"] > 0){   
+        $_SESSION["cart"][$i]["qty"]--;
+        $cart--;
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -50,20 +60,27 @@ if (isset($_GET['add'])){
                 <tr>
                     <td name='item'>Camera <img src="product-images/camera.jpg"></td>
                     <td name='price'>$1,500</td>
-                    <td><a href="?add=1">Add to Cart</a></td>
+                    <td><a href="?add=1">Add to Cart</a><br>
+                        Quantity: <?php $_SESSION["cart"][1]['qty'] ?><br>
+                        <a href="?delete=1">Delete from cart</a></td>
                 </tr>
                 <tr>
                     <td name='item'>External Hard Drive<img src="product-images/external-hard-drive.jpg"></td>
                     <td name='price'>$800</td>
-                    <td><a href="?add=2">Add to Cart</a></td>
+                    <td><a href="?add=2">Add to Cart</a><br>
+                        Quantity: <?php $_SESSION["cart"][2]['qty'] ?><br>
+                        <a href="?delete=2">Delete from cart</a></td>
                 </tr>
                 <tr>
                     <td name='item'>Wrist Watch<img src="product-images/watch.jpg"></td>
                     <td name='price'>$300</td>
-                    <td><a href="?add=3">Add to Cart</a></td>
+                    <td><a href="?add=3">Add to Cart</a><br>
+                        Quantity: <?php $_SESSION["cart"][3]['qty'] ?><br>
+                        <a href="?delete=3">Delete from cart</a></td>
                 </tr>
             </table>
             <input type="submit" value="View Cart">
+            <p>There are <?php $cart ?> items in the cart</p>
         </form>
     </body>
 </html>
