@@ -1,11 +1,22 @@
+<?php
+session_start();
+$_SESSION["item"] = $_POST["item"];
+$_SESSION["item"]["price"] = $_POST["price"];
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <style>
+            img {
+                width: 150px;
+                height: 150px;
+            }
+        </style>
     </head>
     <body>
-        <form action="addCart.php" method="post">
+        <form action="Browse.php" method="post">
             <table>
                 <tr>
                     <th>Item</th>
