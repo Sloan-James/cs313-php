@@ -3,17 +3,23 @@ session_start();
 //$_SESSION["item"] = $_POST["item"];
 //$_SESSION["item"]["price"] = $_POST["price"];
 
-$_SESSION["cart"][1]["qty"] = 0;
-$_SESSION["cart"][2]["qty"] = 0;
-$_SESSION["cart"][3]["qty"] = 0;
+for ($i=1; $i <= 3; $i++){    
+$_SESSION["cart"][$i]["qty"] = 0;
+}
+$products[1]["item"] = "Camera";
+$products[2]["item"] = "External Hard Drive";
+$products[3]["item"] = "Wrist Watch";
+$products[1]["price"] = 1500;
+$products[2]["price"] = 800;
+$products[3]["price"] = 300;
 
 //Add
 
 if (isset($_GET['add'])){
     $i = $_GET['add'];
     $qty = $_SESSION["cart"][$i]['qty'] + 1;
-    $_SESSION["cart"][$i]['item'] = htmlspecialchars($_POST["item"]);
-    $_SESSION["cart"][$i]['cart'] = $i;
+    $_SESSION["cart"][$i]['item'] = $products[$i]["item"];
+    $_SESSION["cart"][$i]['price'] = $products[$i]["price"];
     $_SESSION["cart"][$i]['qty'] = $qty;
 }
 ?>
@@ -21,7 +27,7 @@ if (isset($_GET['add'])){
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Browse Items</title>
         <style>
             img {
                 width: 150px;
@@ -35,35 +41,27 @@ if (isset($_GET['add'])){
     </head>
     <body>
         <form action="Cart.php" method="post">
-        <form action="Browse.php" method="post">
             <table style="width:100%">
                 <tr>
                     <th>Item</th>
                     <th>Price</th>
                 </tr>
                 <tr>
-                <form action="addCart.php" method="post">
                     <td name='item'>Camera <img src="product-images/camera.jpg"></td>
                     <td name='price'>$1,500</td>
-                    <td><a href="?add=1">Add to Cart</a><input type="submit" value="Add to Cart"></td>
-                </form>
+                    <td><a href="?add=1">Add to Cart</a></td>
                 </tr>
                 <tr>
-                <form action="addCart.php" method="post">
                     <td name='item'>External Hard Drive<img src="product-images/external-hard-drive.jpg"></td>
                     <td name='price'>$800</td>
-                    <td><a href="?add=2">Add to Cart</a><input type="submit" value="Add to Cart"></td>
-                </form>
+                    <td><a href="?add=2">Add to Cart</a></td>
                 </tr>
                 <tr>
-                <form action="addCart.php" method="post">
                     <td name='item'>Wrist Watch<img src="product-images/watch.jpg"></td>
                     <td name='price'>$300</td>
-                    <td><a href="?add=3">Add to Cart</a><input type="submit" value="Add to Cart"></td>
-                </form>
+                    <td><a href="?add=3">Add to Cart</a></td>
                 </tr>
             </table>
-        </form>
             <input type="submit" value="View Cart">
         </form>
     </body>
