@@ -12,7 +12,6 @@ function test_input($data) {
   return $data;
 }
 function Test(){
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $test = true;
     
     if(empty($_POST["name"])){
@@ -52,7 +51,6 @@ function Test(){
     } else {
         return($_SERVER["PHP_SELF"]);
     }
-}
 }
 
 
