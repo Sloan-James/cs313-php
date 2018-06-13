@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION["cart"]["total"] = 0;
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,19 +10,37 @@ session_start();
     </head>
     <body>
         <p>Cart</p>
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+            </tr>
         <?php
             foreach ( $_SESSION["cart"] as $key){
                 if($key["qty"] > 0){
                 ?>
-        <p><?php echo $key["item"];?>    
-            $<?php echo $key["price"];?>     
-                <?php echo $key["qty"];?>   
-            $<?php echo ($key["price"] * $key["qty"]);?></p>
-            
+            <tr>
+                <td><?php echo $key["item"];?></td>
+                <td>$<?php echo $key["price"];?></td>
+                <td><?php echo $key["qty"];?></td>
+                <td>$<?php 
+                        $itemTotal = $key["price"] * $key["qty"];
+                        $_SESSION["cart"]["total"] = $_SESSION["cart"]["total"] + $itemTotal;
+                        echo ($itemTotal);?></td>
+            </tr>
         <?php
                 }
             }
          //print_r($_SESSION);
         ?>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total Price:<br><?php echo $_SESSION["cart"]["total"];?></td>
+            </tr>
+        </table>
     </body>
 </html>
