@@ -11,8 +11,8 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+function Test(){
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $test = true;
     
     if(empty($_POST["name"])){
@@ -48,11 +48,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     if($test){
-        $site = "Confirm.php";
+        return("Confirm.php");
     } else {
-        $site = $_SERVER["PHP_SELF"];
+        return($_SERVER["PHP_SELF"]);
     }
 }
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -64,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <p>Total Price: $<?php echo $_SESSION["cart"]["total"];?></p>
-        <form action="<?php echo htmlspecialchars($site);?>" method="post">
+        <form action="<?php echo htmlspecialchars(Test());?>" method="post">
             <p>Name: <input name="name" type="text">
                 <span class="error">* <?php echo $nameErr;?></span></p>
             <p>Street Address: <input name="address" type="text">
