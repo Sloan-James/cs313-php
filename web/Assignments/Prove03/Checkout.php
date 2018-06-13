@@ -46,6 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $zip = test_input($_POST["zip"]);
     }
+    
+    if($test){
+        $site = "Confirm.php";
+    } else {
+        $site = $_SERVER["PHP_SELF"];
+    }
 }
 
 ?>
@@ -57,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <style>.error {color: #FF0000;}</style>
     </head>
     <body>
-        <p>Total Price: <?php echo $_SESSION["cart"]["total"];?></p>
+        <p>Total Price: $<?php echo $_SESSION["cart"]["total"];?></p>
         <form action="<?php echo htmlspecialchars($site);?>" method="post">
             <p>Name: <input name="name" type="text">
                 <span class="error">* <?php echo $nameErr;?></span></p>

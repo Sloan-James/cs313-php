@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -7,11 +10,25 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Confirm</title>
     </head>
     <body>
         <?php
-        // put your code here
-        ?>
+            foreach ($_SESSION["cart"] as $key){
+                if($key["qty"] > 0){
+                ?>
+        <p><?php echo $key["item"];?> X <?php echo $key["qty"];?></p>
+                <?php
+                
+                }
+                
+                }?>
+        
+        <p>Total Price: <?php $_SESSION["cart"]["total"]; ?></p>
+        <p>Your order has been completed. Your purchase will be shipped to:</p>
+        <p><?php echo $_POST["name"];?></p>
+        <p><?php echo $_POST["address"];?></p>
+        <p><?php echo $_POST["city"];?>, <?php echo $_POST["state"];?> <?php echo $_POST["zip"];?></p>
+        
     </body>
 </html>
