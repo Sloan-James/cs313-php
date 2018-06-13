@@ -11,8 +11,11 @@ session_start();
         <p>Cart</p>
         <?php
         for ($i = 1; $i <= 3; $i++){
+            echo "here1";
             foreach ( $_SESSION["cart"][$i] as $key){
+                echo "here2";
                 if($key["qty"] > 0){
+                    echo "here3";
                 ?>
         <p><?php echo $key["item"];?>    
             $<?php echo $key["price"];?>     
