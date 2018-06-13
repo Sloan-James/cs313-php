@@ -49,7 +49,7 @@ function Test(){
     if($test){
         return("Confirm.php");
     } else {
-        return($_SERVER["PHP_SELF"]);
+        return null;
     }
 }
 
