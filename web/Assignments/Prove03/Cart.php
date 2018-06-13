@@ -5,12 +5,25 @@ session_start();
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Cart</title>
     </head>
     <body>
-        <p>Hello</p>
+        <p>Cart</p>
         <?php
-         print_r($_SESSION);
+        for ($i = 1; $i <= 3; $i++){
+            foreach ( $_SESSION["cart"][$i] as $key){
+                if($key["qty"] > 0){
+                ?>
+        <p><?php echo $key["item"];?>    
+            $<?php echo $key["price"];?>     
+                <?php echo $key["qty"];?>   
+            $<?php echo ($key["price"] * $key["qty"]);?></p></br>
+            
+        <?php
+                }
+            }
+        }
+         //print_r($_SESSION);
         ?>
     </body>
 </html>
