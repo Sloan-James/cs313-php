@@ -39,8 +39,11 @@ $_SESSION["cart"]["total"] = 0;
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>Total Price:<br><?php echo $_SESSION["cart"]["total"];?></td>
+                <td>Total Price:<br>$<?php echo $_SESSION["cart"]["total"];?></td>
             </tr>
         </table>
+        <form action="Checkout.php">
+            <input type="submit" value="Checkout">
+        </form>
     </body>
 </html>
