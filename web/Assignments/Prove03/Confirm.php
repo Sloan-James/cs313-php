@@ -24,7 +24,7 @@ and open the template in the editor.
                 
                 }?>
         
-        <p>Total Price: <?php $_SESSION["cart"]["total"]; ?></p>
+        <p>Total Price: <?php echo $_SESSION["cart"]["total"]; ?></p>
         <p>Your order has been completed. Your purchase will be shipped to:</p>
         <p><?php echo $_SESSION["name"];?></p>
         <p><?php echo $_SESSION["address"];?></p>
