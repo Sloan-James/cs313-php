@@ -26,9 +26,9 @@ and open the template in the editor.
         
         <p>Total Price: <?php $_SESSION["cart"]["total"]; ?></p>
         <p>Your order has been completed. Your purchase will be shipped to:</p>
-        <p><?php echo $_POST["name"];?></p>
-        <p><?php echo $_POST["address"];?></p>
-        <p><?php echo $_POST["city"];?>, <?php echo $_POST["state"];?> <?php echo $_POST["zip"];?></p>
+        <p><?php echo $_SESSION["name"];?></p>
+        <p><?php echo $_SESSION["address"];?></p>
+        <p><?php echo $_SESSION["city"];?>, <?php echo $_SESSION["state"];?> <?php echo $_SESSION["zip"];?></p>
         
     </body>
 </html>

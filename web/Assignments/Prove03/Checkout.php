@@ -3,7 +3,7 @@ session_start();
 
 $nameErr = $addressErr = $cityErr = $stateErr = $zipErr = "";
 $name = $address = $city = $state = $zip = "";
-
+$test = true;
 
 function test_input($data) {
   $data = trim($data);
@@ -11,8 +11,9 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
-function Test(){
-    $test = true;
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+        
     
     if(empty($_POST["name"])){
         $nameErr = "Name is required";
@@ -46,12 +47,13 @@ function Test(){
         $zip = test_input($_POST["zip"]);
     }
     
-    if($test){
-        return("Confirm.php");
-    } else {
-        return null;
+    if ($test) {
+        $_SESSION['form_data'] = $_POST;
+        header ("Location: Confirm.php"); exit;
     }
 }
+
+
 
 
 ?>
@@ -64,7 +66,7 @@ function Test(){
     </head>
     <body>
         <p>Total Price: $<?php echo $_SESSION["cart"]["total"];?></p>
-        <form action="<?php echo htmlspecialchars(Test());?>" method="post">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
             <p>Name: <input name="name" type="text">
                 <span class="error">* <?php echo $nameErr;?></span></p>
             <p>Street Address: <input name="address" type="text">
