@@ -14,6 +14,7 @@ and open the template in the editor.
         <?php 
             include 'nav.php';
         ?>
-        <div>Coming Soon</div>
+        <div>Assignments</div>
+        <a href="Assignments/Prove03/Browse.php">Prove 03</a>
     </body>
 </html>
