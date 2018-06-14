@@ -26,10 +26,11 @@ and open the template in the editor.
       
         <p>Total Price: <?php echo $_SESSION["cart"]["total"]; ?></p>
         <p>Your order has been completed. Your purchase will be shipped to:</p>
-        <p><?php echo $_SESSION["name"];?></p>
-        <p><?php echo $_SESSION["address"];?></p>
-        <p><?php echo $_SESSION["city"];?>, <?php echo $_SESSION["state"];?> <?php echo $_SESSION["zip"];?></p>
+        <p><?php echo $_SESSION["form_data"]["name"];?></p>
+        <p><?php echo $_SESSION["form_data"]["address"];?></p>
+        <p><?php echo $_SESSION["form_data"]["city"];?>, 
+            <?php echo $_SESSION["form_data"]["state"];?> 
+                <?php echo $_SESSION["form_data"]["zip"];?></p>
         
-        <?php echo print_r($_SESSION);?>
     </body>
 </html>
