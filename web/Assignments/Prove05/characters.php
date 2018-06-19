@@ -23,6 +23,7 @@ and open the template in the editor.
         <?php
             $stmt = $db->query('SELECT * FROM characters');
             while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
+                echo "something2";
                 if ($row['userid'] == $id){
                     echo 'Char Name: ' . $row['charname'];
                     echo ' Server: ' . $row['server'];
