@@ -1,6 +1,6 @@
 <?php
     $pages = scandir('.');
-    $notWanted = array('.','..', 'index.php', 'nav.php', 'introduction.css', 'nav.css');
+    $notWanted = array('.','..', 'index.php', 'nav.php', 'introduction.css', 'nav.css' , './*');
 
     echo '<ul class="menu">';
 
