@@ -21,7 +21,8 @@ and open the template in the editor.
         echo 'Progression:';
         include "ExpansionList.php";
         echo 'Deity:';
-        include "Deity.php";
+        include "DeityList.php";
+        echo '<br><br>';
         ?>
         <!--
         <form action="login.php" method="post">

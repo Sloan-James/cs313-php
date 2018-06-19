@@ -2,6 +2,7 @@
 require '../connectDatabase.php';
 
 if (isset($_GET['userid'])){
+    echo "something";
     $id = $_GET['userid'];
 }
 

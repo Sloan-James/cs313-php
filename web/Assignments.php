@@ -16,5 +16,6 @@ and open the template in the editor.
         ?>
         <div>Assignments</div>
         <a href="Assignments/Prove03/Browse.php">Prove 03</a>
+        <a href="Assignments/Prove05/Prove05.php">Prove 05</a>
     </body>
 </html>
