@@ -31,6 +31,7 @@ and open the template in the editor.
                     echo ' Race: ' . $row['race'];
                     echo ' Deity: ' . $row['deity'];
                     echo ' <a href="basestats.php?charid=' . $row['charid'] . '">Base Stats</a>';
+                    echo '<br><br>';
                 }
             }
         ?>

@@ -20,7 +20,7 @@ and open the template in the editor.
     <body>
         <?php
             foreach($db->query('SELECT * FROM basestats') as $row){
-                if($row['charid'] == $charid){
+                if($row['charid'] == $id){
                     echo '<table><tr><th>STR</th><th>STA</th><th>AGI</th><th>DEX</th><th>WIS</th><th>INT</th><th>CHA</th></tr>';
                     echo '<tr><td>' . $row['strength'];
                     echo '</td><td>' . $row['stamina'];
