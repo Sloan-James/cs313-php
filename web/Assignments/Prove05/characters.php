@@ -2,7 +2,6 @@
 require '../connectDatabase.php';
 
 if (isset($_GET['userid'])){
-    echo "something";
     $id = $_GET['userid'];
 }
 
@@ -22,8 +21,7 @@ and open the template in the editor.
     <body>
         <?php
             $stmt = $db->query('SELECT * FROM characters');
-            while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
-                echo "something2";
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
                 if ($row['userid'] == $id){
                     echo 'Char Name: ' . $row['charname'];
                     echo ' Server: ' . $row['server'];
