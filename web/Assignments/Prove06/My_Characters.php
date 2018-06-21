@@ -115,7 +115,7 @@ if (!isset($_COOKIE["user"])){
         }
         
         ?>
-        <button formmethod="post" name="logout">Log out</button>
+        <button formmethod="post" name="logout" id="logout">Log out</button>
         <?php
         if(array_key_exists('logout',$_POST)){
             setcookie("user","",time() - 3600);
