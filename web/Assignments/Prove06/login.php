@@ -22,7 +22,7 @@ if (empty($_POST["password"])){
 echo "test1";
 
 $statement = $db->query("SELECT username, password FROM users WHERE username = $user");
-$row = $statement->fetch(PDO::FETCH_ASSOC);
+$row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
 // Password not currently saved securely
