@@ -115,6 +115,7 @@ if (!isset($_COOKIE["user"])){
         }
         
         ?>
+        <a href=""><button>Back to Characters</button></a>
         <form method="post" action="logout.php">
             <input type="submit" value="logout">
         </form>
