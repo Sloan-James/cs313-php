@@ -28,9 +28,9 @@ $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 echo $row['username'];
 
 if($row['username'] != $user){
-    echo "test 2";
     // needs password encryption
     $query = "INSERT INTO 'users' ('user','password') VALUES ('" . $user . "','" . $pass . "')";
+    echo $query;
     $db->query($query);
     $_SESSION['signup'] = "Sign up successful";
     header ('Location: Prove06.php');
