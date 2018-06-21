@@ -1,4 +1,5 @@
 <?php
+session_start();
 require '../connectDatabase.php';
 
 if(empty($_POST["username"])){
