@@ -20,9 +20,13 @@ if (empty($_POST["password"])){
     $pass = $_POST["password"];
 }
 
+echo "test 1";
+
 $query = "SELECT username, password FROM users WHERE username = '" . $user . "'";
 $statement = $db->query($query);
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+echo "test 2";
 
 if($row['username'] != $user){
     // needs password encryption
