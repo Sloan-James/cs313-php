@@ -38,7 +38,7 @@ if (!isset($_COOKIE["user"])){
             }
         
         ?>
-        <button action="?charid=0">Add new character</button>
+        <a href="?charid=0"><button>Add new character</button></a>
         <?php
         // Find a way to condense these next two sections into a single section
         // but unnecessary at this time
