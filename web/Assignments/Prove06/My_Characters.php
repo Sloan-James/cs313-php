@@ -97,13 +97,13 @@ if (!isset($_COOKIE["user"])){
             $statement->bindValue(':charid',$charid,PDO::PARAM_INT);
             $statement->execute();
             $result = $statement->fetch(PDO::FETCH_ASSOC);
-            echo 'STR: ' . $result2["strength"] . '<br>';
-            echo 'STA: ' . $result2["stamina"] . '<br>';
-            echo 'AGI: ' . $result2["agility"] . '<br>';
-            echo 'DEX: ' . $result2["dexterity"] . '<br>';
-            echo 'WIS: ' . $result2["wisdom"] . '<br>';
-            echo 'INT: ' . $result2["intellect"] . '<br>';
-            echo 'CHA: ' . $result2["charisma"] . '<br>';
+            echo 'STR: ' . $result["strength"] . '<br>';
+            echo 'STA: ' . $result["stamina"] . '<br>';
+            echo 'AGI: ' . $result["agility"] . '<br>';
+            echo 'DEX: ' . $result["dexterity"] . '<br>';
+            echo 'WIS: ' . $result["wisdom"] . '<br>';
+            echo 'INT: ' . $result["intellect"] . '<br>';
+            echo 'CHA: ' . $result["charisma"] . '<br>';
             
             //Would like to save from this screen, changes needed
             //echo '<input type="submit" value="Save">';
