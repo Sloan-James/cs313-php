@@ -20,16 +20,19 @@ if (empty($_POST["password"])){
     $pass = $_POST["password"];
 }
 
+$stmt = $db->prepare('SELECT username FROM users WHERE username = :user');
+$stmt->bindValue(':user',$user, PDO::PARAM_STR);
+$stmt->execute();
+$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//$query = "SELECT username FROM users WHERE username = '" . $user . "'";
+//$statement = $db->query($query);
 
-$query = "SELECT username, password FROM users WHERE username = '" . $user . "'";
-$statement = $db->query($query);
-$row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 echo $row['username'];
 
 if($row['username'] != $user){
     // needs password encryption
-    $query = "INSERT INTO 'users' ('user','password') VALUES ('" . $user . "','" . $pass . "')";
+    $query = "INSERT INTO users (username,password) VALUES ('" . $user . "','" . $pass . "')";
     echo $query;
     $db->query($query);
     $_SESSION['signup'] = "Sign up successful";
