@@ -25,7 +25,8 @@ $query = "SELECT username,password FROM users WHERE username ='" . $user . "'";
 $statement = $db->query($query);
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-//$_SESSION['test'] = $pass;
+$_SESSION['test'] = $pass;
+$_SESSION['test4'] = $user;
 $_SESSION['test2'] = $row['password'];
 $_SESSION['test3'] = $row['username'];
 

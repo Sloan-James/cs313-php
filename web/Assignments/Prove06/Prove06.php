@@ -28,6 +28,7 @@ and open the template in the editor.
         <br>
         <?php
             echo $_SESSION['test'];
+            echo $_SESSION['test4'];
             echo $_SESSION['test2'];
             echo $_SESSION['test3'];
         ?>
