@@ -25,7 +25,7 @@ $query = "SELECT username,password FROM users WHERE username ='" . $user . "'";
 $statement = $db->query($query);
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-$_SESSION['test'] = $_POST["username"];
+$_SESSION['test'] = $pass;
 
 // Password not currently saved securely
 if( $row['password'] == $pass)
