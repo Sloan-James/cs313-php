@@ -8,7 +8,9 @@ if (!isset($_COOKIE["user"])){
     exit();
 } else {
     $username = $_COOKIE["user"];
-    $statement = $db->query("SELECT userid FROM users WHERE username = :username");
+    $statement = $db->prepare("SELECT userid FROM users WHERE username = :username");
+    $statement->bindValue(':username', $username, PDO::PARAM_STR);
+    $statement->execute();
     $row = $statement->fetch(PDO::FETCH_ASSOC);
     $userid = $row["userid"];           
 }
@@ -25,8 +27,11 @@ if (!isset($_COOKIE["user"])){
     <body>
         <?php
         if(!isset($_GET['charid'])){
-            
-            foreach($db->query("SELECT * FROM characters WHERE userid = :userid") as $row){
+            $statement = $db->prepare("SELECT * FROM characters WHERE userid = :userid");
+            $statement->bindValue(':userid', $userid, PDO::PARAM_INT);
+            $statement->execute();
+                    
+            while($row = $statement->fetch(PDO::FETCH_ASSOC)){
                 echo "<a href='?charid=" . $row["charid"] . "'>";
                 echo $row["charname"] . " (Level " . $row["level"] . " " . $row["class"] . ")";
                 echo "</a><br>";
@@ -78,16 +83,20 @@ if (!isset($_COOKIE["user"])){
         } else {
             $charid = $_GET['charid'];
             
-            $statement = $db->query("SELECT * FROM characters WHERE userid = :charid");
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $statement = $db->prepare("SELECT * FROM characters WHERE charid = :charid");
+            $statement->bindValue(':charid',$charid,PDO::PARAM_INT);
+            $statement->execute();
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
             echo 'Server: ' . $result["server"] . '<br>';
             echo 'Expansion: ' . $result["expansion"] . '<br>';
             echo 'Class: ' . $result["class"] . '<br>';
             echo 'Race: ' . $result["race"] . '<br>';
             echo 'Deity: ' . $result["deity"] . '<br>';
             
-            $statement2 = $db->query("SELECT * FROM basestats WHERE userid = :charid");
-            $result2 = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $statement = $db->prepare("SELECT * FROM basestats WHERE charid = :charid");
+            $statement->bindValue(':charid',$charid,PDO::PARAM_INT);
+            $statement->execute();
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
             echo 'STR: ' . $result2["strength"] . '<br>';
             echo 'STA: ' . $result2["stamina"] . '<br>';
             echo 'AGI: ' . $result2["agility"] . '<br>';
