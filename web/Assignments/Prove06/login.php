@@ -20,7 +20,8 @@ if (empty($_POST["password"])){
 }
 
 echo "test 1";
-$statement = $db->query("SELECT username, password FROM users WHERE username = :user");
+$statement = $db->query("SELECT username, password FROM users WHERE username = ':user'");
+echo "test this";
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 echo "test 2";
