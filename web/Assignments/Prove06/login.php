@@ -21,10 +21,15 @@ if (empty($_POST["password"])){
 }
 
 //$query = "SELECT username, password FROM users WHERE username = '" . $user . "'";
-$query = "SELECT username, password FROM users WHERE username = 'koredan'";
+//$query = "SELECT username, password FROM users WHERE username = 'koredan'";
 
-$statement = $db->query($query);
-$row = $statement->fetchAll(PDO::FETCH_ASSOC);
+//$statement = $db->query($query);
+//$row = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+$stmt = $db->prepare("SELECT username, password FROM users WHERE username ='koredan'");
+//$stmt->execute(array(':user' => $user));
+$stmt->execute();
+$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $_SESSION['test5'] = $query;
 $_SESSION['test'] = $pass;
