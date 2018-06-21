@@ -19,17 +19,21 @@ if (empty($_POST["password"])){
     $pass = $_POST["password"];
 }
 
-
+echo "test 1";
 $statement = $db->query("SELECT username, password FROM users WHERE username = :user");
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+echo "test 2";
 
 // Password not currently saved securely
 if( $row['password'] == $pass)
 {
+    echo "test 3";
     setcookie("user",$user,time() + (86400 * 30), '/');
     header('Location: My_Characters.php');
     exit;
 } else {
+    echo "test 4";
     $_SESSION['error'] = "Incorrect username/password";
     header('Location: Prove06.php');
     exit;
