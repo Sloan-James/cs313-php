@@ -20,12 +20,12 @@ if (empty($_POST["password"])){
     $pass = $_POST["password"];
 }
 
-$statement = $db->query("SELECT username, password FROM users WHERE username = $user");
+$statement = $db->query("SELECT username, password FROM users WHERE username = :user");
 $row = $statement->fetch(PDO::FETCH_ASSOC);
 
 if($row['username'] != $user){
     // needs password encryption
-    $db->query("INSERT INTO 'users' ('user','password') VALUES ('$user','$pass')");
+    $db->query("INSERT INTO 'users' ('user','password') VALUES (':user',':pass')");
     $_SESSION['signup'] = "Sign up successful";
     header ('Location: Prove06.php');
     exit;
