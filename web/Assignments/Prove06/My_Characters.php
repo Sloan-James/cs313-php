@@ -79,7 +79,9 @@ if (!isset($_COOKIE["user"])){
             
             <input type="submit" value="Save"><br>
         </form>
+        
         <?php
+        echo "<a href='My_Characters.php'><button>Back to Characters</button></a>";
         } else {
             $charid = $_GET['charid'];
             
@@ -112,10 +114,11 @@ if (!isset($_COOKIE["user"])){
             echo 'Armor: <br>';
             // Extra learning needed
             echo 'Unavailable at this time'; 
+            echo "<a href='My_Characters.php'><button>Back to Characters</button></a>";
         }
         
         ?>
-        <a href=""><button>Back to Characters</button></a>
+        
         <form method="post" action="logout.php">
             <input type="submit" value="logout">
         </form>
