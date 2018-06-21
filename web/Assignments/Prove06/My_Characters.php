@@ -115,13 +115,8 @@ if (!isset($_COOKIE["user"])){
         }
         
         ?>
-        <button formmethod="post" name="logout" id="logout">Log out</button>
-        <?php
-        if(array_key_exists('logout',$_POST)){
-            setcookie("user","",time() - 3600);
-            header("Location: Prove06.php");
-        }
-        
-        ?>
+        <form method="post" action="logout.php">
+            <input type="submit" value="logout">
+        </form>
     </body>
 </html>
