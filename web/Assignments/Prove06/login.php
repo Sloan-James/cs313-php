@@ -20,11 +20,12 @@ if (empty($_POST["password"])){
     $pass = $_POST["password"];
 }
 
-$query = "SELECT username, password FROM users WHERE username =" . $user . "";
+$query = "SELECT username, password FROM users WHERE username ='" . $user . "'";
 
 $statement = $db->query($query);
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+$_SESSION['test5'] = $query;
 $_SESSION['test'] = $pass;
 $_SESSION['test4'] = $user;
 $_SESSION['test2'] = $row['password'];

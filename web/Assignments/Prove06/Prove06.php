@@ -31,6 +31,8 @@ and open the template in the editor.
             echo $_SESSION['test4'];
             echo $_SESSION['test2'];
             echo $_SESSION['test3'];
+            echo "<br>";
+            echo $_SESSION['test5'];
         ?>
     </body>
 </html>
