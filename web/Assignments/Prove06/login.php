@@ -24,7 +24,7 @@ echo "test1";
 $statement = $db->query("SELECT username, password FROM users WHERE username = $user");
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-
+echo "test 4";
 // Password not currently saved securely
 if( $row['password'] == $pass)
 {
@@ -39,3 +39,4 @@ if( $row['password'] == $pass)
     exit;
 }
 
+echo "test 5";
