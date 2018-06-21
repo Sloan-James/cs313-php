@@ -26,7 +26,7 @@ $query = "SELECT username, password FROM users WHERE username = '" . $user . "'"
 $statement = $db->query($query);
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-echo "test 2";
+echo $row['username'];
 
 if($row['username'] != $user){
     // needs password encryption
