@@ -20,7 +20,8 @@ if (empty($_POST["password"])){
     $pass = $_POST["password"];
 }
 
-$statement = $db->query("SELECT username, password FROM users WHERE username = ':user'");
+$query = "SELECT username, password FROM users WHERE username = '" . $user . "'";
+$statement = $db->query($query);
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 if($row['username'] != $user){
