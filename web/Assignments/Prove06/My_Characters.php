@@ -44,15 +44,15 @@ if (!isset($_COOKIE["user"])){
         // but unnecessary at this time
         } elseif ($_GET['charid'] === 0) {
             echo 'Server:';
-            include "Dropdownmenus/ServerList.php";
+            include "./Dropdownmenus/ServerList.php";
             echo '<br>Expansion:';
-            include "Dropdownmenus/ExpansionList.php";
+            include "./Dropdownmenus/ExpansionList.php";
             echo '<br>Class:';
-            include "Dropdownmenus/ClassList.php";
+            include "./Dropdownmenus/ClassList.php";
             echo '<br>Race:';
-            include "Dropdownmenus/RaceList.php";
+            include "./Dropdownmenus/RaceList.php";
             echo '<br>Deity:';
-            include "Dropdownmenus/DeityList.php";
+            include "./Dropdownmenus/DeityList.php";
             echo '<br><br>';
         ?>
         <form method="post" action="create.php" id="character">
