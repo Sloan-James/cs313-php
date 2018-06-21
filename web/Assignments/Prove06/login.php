@@ -25,10 +25,10 @@ $query = "SELECT username,password FROM users WHERE username ='" . $user . "'";
 $statement = $db->query($query);
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-$_SESSION['test'] = $_POST["password"];
+$_SESSION['test'] = $_POST["username"];
 
 // Password not currently saved securely
-if( $row['password'] === $pass)
+if( $row['password'] == $pass)
 {
     setcookie("user",$user,time() + (86400 * 30), '/');
     header('Location: My_Characters.php');
