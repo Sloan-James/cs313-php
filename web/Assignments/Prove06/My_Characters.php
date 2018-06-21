@@ -42,7 +42,7 @@ if (!isset($_COOKIE["user"])){
         <?php
         // Find a way to condense these next two sections into a single section
         // but unnecessary at this time
-        } elseif ($_GET['charid'] === 0) {
+        } elseif ($_GET['charid'] == 0) {
             echo 'Server:';
             include("Dropdownmenus/ServerList.php");
             echo '<br>Expansion:';
@@ -56,25 +56,25 @@ if (!isset($_COOKIE["user"])){
             echo '<br><br>';
         ?>
         <form method="post" action="create.php" id="character">
-            Name:
+            <span>Name:</span>
             <input type="text" name="name">
             <br>
-            Level:
+            <span>Level:</span>
             <input type="text" name="level">
             <br>
-            STR:
+            <span>STR:</span>
             <input type="text" name="str"><br>
-            STA:
+            <span>STA:</span>
             <input type="text" name="sta"><br>
-            AGI:
+            <span>AGI:</span>
             <input type="text" name="agi"><br>
-            DEX:
+            <span>DEX:</span>
             <input type="text" name="dex"><br>
-            WIS:
+            <span>WIS:</span>
             <input type="text" name="wis"><br>
-            INT:
+            <span>INT:</span>
             <input type="text" name="int"><br>
-            CHA:
+            <span>CHA:</span>
             <input type="text" name="cha"><br>
             
             <input type="submit" value="Save"><br>
