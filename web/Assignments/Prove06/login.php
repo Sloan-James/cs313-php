@@ -20,22 +20,10 @@ if (empty($_POST["password"])){
     $pass = $_POST["password"];
 }
 
-//$query = "SELECT username, password FROM users WHERE username = '" . $user . "'";
-//$query = "SELECT username, password FROM users WHERE username = 'koredan'";
 
-//$statement = $db->query($query);
-//$row = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-$stmt = $db->prepare("SELECT username, password FROM users WHERE username ='koredan'");
-//$stmt->execute(array(':user' => $user));
-$stmt->execute();
+$stmt = $db->prepare("SELECT username, password FROM users WHERE username =:user");
+$stmt->execute(array(':user' => $user));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$_SESSION['test5'] = $query;
-//$_SESSION['test'] = $pass;
-//$_SESSION['test4'] = $user;
-$_SESSION['test2'] = $row['password'];
-$_SESSION['test3'] = $row['username'];
 
 // Password not currently saved securely
 if( $row['password'] == $pass)
