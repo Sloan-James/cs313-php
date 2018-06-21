@@ -27,7 +27,7 @@ and open the template in the editor.
         </form>
         
         <?php
-        // put your code here
+            echo $_SESSION['test'];
         ?>
     </body>
 </html>
