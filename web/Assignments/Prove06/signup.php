@@ -24,17 +24,14 @@ $stmt = $db->prepare('SELECT username FROM users WHERE username = :user');
 $stmt->bindValue(':user',$user, PDO::PARAM_STR);
 $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
-//$query = "SELECT username FROM users WHERE username = '" . $user . "'";
-//$statement = $db->query($query);
 
 
 echo $row['username'];
 
 if($row['username'] != $user){
     // needs password encryption
-    $query = "INSERT INTO users (username,password) VALUES ('" . $user . "','" . $pass . "')";
-    echo $query;
-    $db->query($query);
+    $stmt = $db->prepare("INSERT INTO users (username,password) VALUES (:user,:pass)");
+    $stmt->execute(array(':user' => $user,':pass' => pass));
     $_SESSION['signup'] = "Sign up successful";
     header ('Location: Prove06.php');
     exit;
