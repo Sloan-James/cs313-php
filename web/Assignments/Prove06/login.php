@@ -23,8 +23,11 @@ if (empty($_POST["password"])){
 $statement = $db->query("SELECT username, password FROM users WHERE username = ':user'");
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-$item = $row['password'];
-echo "<script type='text/javascript'>alert('$item');</script>";
+alert($row['password']);
+
+function alert($msg) {
+    echo "<script type='text/javascript'>alert('$msg');</script>";
+}
 
 // Password not currently saved securely
 if( $row['password'] === $pass)
