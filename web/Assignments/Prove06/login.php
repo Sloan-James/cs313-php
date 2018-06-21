@@ -29,11 +29,11 @@ if (empty($_POST["password"])){
 $stmt = $db->prepare("SELECT username, password FROM users WHERE username ='koredan'");
 //$stmt->execute(array(':user' => $user));
 $stmt->execute();
-$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 $_SESSION['test5'] = $query;
-$_SESSION['test'] = $pass;
-$_SESSION['test4'] = $user;
+//$_SESSION['test'] = $pass;
+//$_SESSION['test4'] = $user;
 $_SESSION['test2'] = $row['password'];
 $_SESSION['test3'] = $row['username'];
 

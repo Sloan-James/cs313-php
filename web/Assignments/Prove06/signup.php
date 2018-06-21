@@ -23,7 +23,7 @@ if (empty($_POST["password"])){
 $stmt = $db->prepare('SELECT username FROM users WHERE username = :user');
 $stmt->bindValue(':user',$user, PDO::PARAM_STR);
 $stmt->execute();
-$row = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
 //$query = "SELECT username FROM users WHERE username = '" . $user . "'";
 //$statement = $db->query($query);
 
