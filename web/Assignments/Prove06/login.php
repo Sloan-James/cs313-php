@@ -27,7 +27,7 @@ $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 echo "test 2";
 
 // Password not currently saved securely
-if( $row['password'] == $pass)
+if( $row['password'] === $pass)
 {
     echo "test 3";
     setcookie("user",$user,time() + (86400 * 30), '/');

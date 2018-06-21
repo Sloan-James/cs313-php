@@ -22,7 +22,7 @@ and open the template in the editor.
             <input type="submit" value="Sign in">
             <button formaction="signup.php">Sign up</button><br>
             <span class="signup"><?php echo $_SESSION['signup']?>
-            <span class="error"><?php echo $_SESSION['login']?></span>
+            <span class="error"><?php echo $_SESSION['error']?></span>
             
         </form>
         
