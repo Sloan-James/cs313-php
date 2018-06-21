@@ -22,7 +22,7 @@ if (!isset($_COOKIE["user"])){
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Characters</title>
     </head>
     <body>
         <?php

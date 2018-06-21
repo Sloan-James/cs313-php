@@ -17,6 +17,7 @@ $race = $_POST["race"];
 $deity = $_POST["deity"];
 $name = $_POST["name"];
 $level = $_POST["level"];
+$str = $sta = $agi = $dex = $wis = $int = $cha = 0;
 $str = $_POST["str"];
 $sta = $_POST["sta"];
 $agi = $_POST["agi"];
