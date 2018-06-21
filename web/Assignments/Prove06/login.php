@@ -26,6 +26,7 @@ $statement = $db->query($query);
 $row = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 $_SESSION['test'] = $pass;
+$_SESSION['test2'] = $row["password"];
 
 // Password not currently saved securely
 if( $row['password'] == $pass)

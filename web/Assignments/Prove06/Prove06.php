@@ -25,9 +25,10 @@ and open the template in the editor.
             <span class="error"><?php echo $_SESSION['error']?></span>
             
         </form>
-        
+        <br>
         <?php
             echo $_SESSION['test'];
+            echo "<br>" . $_SESSION['test2'];
         ?>
     </body>
 </html>
