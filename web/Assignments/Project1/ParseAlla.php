@@ -5,7 +5,8 @@ echo "begin<br>";
 $html = $_POST["itemLink"];
 $dom = new DOMDocument();
 $dom->loadHTML($html);
-$finder = new DomXPath($html);
+$finder = new DomXPath($dom);
+echo "finder<br>";
 $finder->query('//div[contains(@class, "nobgrd")]');
 
 echo "Got class nobgrd<br>";
