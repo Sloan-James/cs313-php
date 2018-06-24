@@ -3,18 +3,14 @@
 echo "begin<br>";
 
 $html = $_POST["itemLink"];
-echo "retrieve post<br>";
 $dom = new DOMDocument();
-echo "new Document<br>";
 $dom->loadHTML($html);
-
-echo "loaded html<br>";
-
-$item = $dom->getElementsByClassName('nobgrd');
+$finder = new DomXPath($html);
+$finder->query('//div[contains(@class, "nobgrd")]');
 
 echo "Got class nobgrd<br>";
 
-echo $item->innerHTML;
+echo $finder;
 echo "<br>";
 $itemLines = split('<br>',$item->innerHTML);
 
