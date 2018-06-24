@@ -7,17 +7,9 @@ $dom = new DOMDocument();
 $dom->loadHTML($html);
 $xpath = new DomXPath($dom);
 echo "finder<br>";
-$items = $xpath->query('//div[@class="nobgrd"]');
+$item = $xpath->query('string(//div[@class="nobgrd"])');
 echo "query<br>";
-$item = $items->item(0);
-echo "item 1<br>";
-$test = $item->innerHTML;
-echo "innerhtml<br>";
 
-echo $test;
+echo $item;
 
-foreach($itemLines as $line){
-    echo "Test 2<br>";
-    echo $line;
-    echo "<br>";
-}
+
