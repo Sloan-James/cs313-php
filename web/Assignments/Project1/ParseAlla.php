@@ -14,6 +14,8 @@ $item = $dom->getElementsByTagName("nobgrd");
 
 echo "Got class nobgrd<br>";
 
+echo $item;
+echo "<br>";
 $itemLines = split('<br>',$item);
 
 echo "Test<br>";
