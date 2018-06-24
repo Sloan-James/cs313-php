@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Add Item</title>
     </head>
     <body>
         <h1>Add Items</h1>
