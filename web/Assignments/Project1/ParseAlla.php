@@ -1,23 +1,21 @@
 <?php
 
-echo "begin<br>";
+include "simple_html_dom.php";
 
 $url = $_POST["itemLink"];
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
-$html = curl_exec($ch);
 
-$dom = new DOMDocument();
+$html = new simple_html_dom();
 
-$dom->loadHTML($html);
-$xpath = new DomXPath($dom);
-echo "finder<br>";
-$item = $xpath->query('//div[@class="nobgrd"]/text()');
-echo "query<br>";
+echo "create object<br>";
 
-echo $item[0];
+$html->load_file($url);
+
+echo "load url<br>";
+
+$item = $html->find('.nobgrd', 0)->innertext;
+
+echo "find nobgrd class<br>";
 echo "<br><br>";
 echo $item;
+
 
