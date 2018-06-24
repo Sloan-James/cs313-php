@@ -4,7 +4,7 @@ echo "begin";
 
 $html = $_POST("itemLink");
 
-$dom = new DOMDocument;
+$dom = new DOMDocument();
 $dom->loadHTML($html);
 
 echo "loaded html";
