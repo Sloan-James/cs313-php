@@ -10,13 +10,13 @@ $dom->loadHTML($html);
 
 echo "loaded html<br>";
 
-$item = $dom->getElementsByTagName("nobgrd");
+$item = $dom->getElementsByClassName("nobgrd")->item(0);
 
 echo "Got class nobgrd<br>";
 
-echo $item;
+echo $item->innerHTML;
 echo "<br>";
-$itemLines = split('<br>',$item);
+$itemLines = split('<br>',$item->innerHTML);
 
 echo "Test<br>";
 echo $itemLines;
