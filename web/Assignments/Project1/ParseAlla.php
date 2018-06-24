@@ -10,7 +10,7 @@ $dom->loadHTML($html);
 
 echo "loaded html<br>";
 
-$item = $dom->getElementsByClassName("nobgrd")->item(0);
+$item = $dom->getElementsByClassName('nobgrd');
 
 echo "Got class nobgrd<br>";
 
