@@ -11,7 +11,7 @@ $finder->query('//div[contains(@class, "nobgrd")]');
 
 echo "Got class nobgrd<br>";
 
-echo $finder;
+echo $dom;
 echo "<br>";
 $itemLines = split('<br>',$item->innerHTML);
 
