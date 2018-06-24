@@ -1,12 +1,17 @@
 <?php
 
+echo "begin";
+
 $html = $_POST("itemLink");
 
 $dom = new DOMDocument;
 $dom->loadHTML($html);
+
+echo "loaded html";
+
 $item = $dom->getElementsByClassName("nobgrd");
 
-echo "Test 4";
+echo "Got class nobgrd";
 
 $itemLines = split('<br>',$item);
 
