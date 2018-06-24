@@ -3,8 +3,9 @@
 echo "begin";
 
 $html = $_POST("itemLink");
-
+echo "retrieve post";
 $dom = new DOMDocument();
+echo "new Document";
 $dom->loadHTML($html);
 
 echo "loaded html";
