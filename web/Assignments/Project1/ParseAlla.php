@@ -56,8 +56,8 @@ foreach ($lines as $line){
                         $stmt->execute(array(':sta' => $splitline[$key + 1], ':itemid' => $itemid));
                         break;
                     case "AGI:":
-                        $stmt = $db->prepare("UPDATE itemdb SET sta = :sta WHERE itemid = :itemid");
-                        $stmt->execute(array(':sta' => $splitline[$key + 1], ':itemid' => $itemid));
+                        $stmt = $db->prepare("UPDATE itemdb SET agi = :agi WHERE itemid = :itemid");
+                        $stmt->execute(array(':agi' => $splitline[$key + 1], ':itemid' => $itemid));
                         break;
                     case "DEX:":
                         $stmt = $db->prepare("UPDATE itemdb SET dex = :dex WHERE itemid = :itemid");
@@ -146,8 +146,11 @@ foreach ($lines as $line){
             break;
         case "Mana":// check needs to be combined with attack
             echo "mana regen started<br>";
-            $stmt = $db->prepare("UPDATE itemdb SET manaregen = :manaregen WHERE itemid = :itemid");
-            $stmt->execute(array(':manaregen' => $splitline[$key + 2], ':itemid' => $itemid));
+            if ($splitline[$key + 2] === "Regeneration:"){
+                $stmt = $db->prepare("UPDATE itemdb SET manaregen = :manaregen WHERE itemid = :itemid");
+                $stmt->execute(array(':manaregen' => $splitline[$key + 3], ':itemid' => $itemid));
+            }
+            
             echo "mana regen added<br>";
             break;
         case "HP":// check needs to be combined with attack
@@ -427,7 +430,7 @@ foreach ($lines as $line){
             for ($i = 2; $i < count($splitline); $i++){
                 echo "slot " . $i . " adding<br>";
                 echo $splitline[$i] . "<br>";
-                $sql = "UPDATE itemdb SET slots[" . $i . "] = '" . $splitline[$i] . "' WHERE itemid = " . $itemid;
+                $sql = "UPDATE itemdb SET slots[" . ($i-1) . "] = '" . $splitline[$i] . "' WHERE itemid = " . $itemid;
                 echo $sql . "<br>";
                 //$stmt = $db->prepare("UPDATE itemdb SET :slotarray = ':slots' WHERE itemid = :itemid");
                 //$stmt->execute(array(':slots' => $splitline[$i], ':itemid' => $itemid));
