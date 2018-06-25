@@ -1,6 +1,6 @@
 <?php
 
-echo '<select name="deity" form="character">
+echo '<select name="deity">
             <option value="1">(Hide deity restricted items)</option>
             <option value="2">Mithaniel Marr</option>
             <option value="3">Cazic-Thule</option>

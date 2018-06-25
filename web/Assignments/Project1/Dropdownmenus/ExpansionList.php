@@ -1,6 +1,6 @@
 <?php
 
-echo '<select name="expansion" form="character">
+echo '<select name="expansion">
             <option value="Classic Everquest">Classic Everquest</option>
             <option value="The Ruins of Kunark">The Ruins of Kunark</option>
             <option value="The Scars of Velious">The Scars of Velious</option>

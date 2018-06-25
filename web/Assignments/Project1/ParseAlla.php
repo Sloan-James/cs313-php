@@ -3,7 +3,7 @@ require '../connectDatabase.php';
 // simple_html_dom is authored by S.C. Chen received from http://simplehtmldom.sourceforge.net/
 include "simple_html_dom.php";
   
-//$expansion = $_POST["expansion"];
+$expansion = $_POST["expansion"];
 
 $url = $_POST["itemLink"];
 echo $url;

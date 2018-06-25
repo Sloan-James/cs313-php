@@ -1,5 +1,5 @@
 <?php
-echo '<select name="server" form="character">
+echo '<select name="server">
             <option value="Corinav">Corinav</option>
             <option value="Agnarr">Agnarr</option>
             <option value="Ragefire">Ragefire</option>

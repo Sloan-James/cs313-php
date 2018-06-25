@@ -1,5 +1,5 @@
 <?php
-echo '<select name="race" form="character">
+echo '<select name="race">
             <option value="1">Barbarian</option>
             <option value="2">Dark Elf</option>
             <option value="3">Drakkin</option>
