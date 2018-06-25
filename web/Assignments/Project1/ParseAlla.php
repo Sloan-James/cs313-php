@@ -13,10 +13,15 @@ $item = $html->find('.nobgrd', 0)->innertext;
 $itemName = $html->find('.shottitle', 0)->innertext;
 $spliturl = split("=",$url);
 $itemid = $spliturl[1];
-$statement = $db->prepare("INSERT INTO itemdb (itemName,itemid,expansion,url) VALUES (:itemname,:itemid,:expansion,:url)");
+echo $itemid;
+echo "<br>";
+$statement = $db->prepare("INSERT INTO itemdb (itemname,itemid,expansion,url) VALUES (:itemname,:itemid,:expansion,:url)");
 $statement->execute(array(':itemname' => $itemName,':itemid' => $itemid, ':expansion' => $expansion, ':url' => $url));
 
 $lines = split("<br>",$item);
+
+echo $lines;
+echo "<br><br>";
 
 foreach ($lines as $line){
     $splitline = split(' ', $line);
