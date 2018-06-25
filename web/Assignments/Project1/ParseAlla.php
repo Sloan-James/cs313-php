@@ -12,6 +12,14 @@ $item = $html->find('.nobgrd', 0)->innertext;
 $itemName = $html->find('.shottitle', 0)->plaintext;
 $spliturl = split("=",$url);
 $itemid = $spliturl[1];
+
+$statement = $db->prepare("SELECT * FROM itemdb WHERE itemid = :itemid");
+$statement->execute(array(':itemid' => $itemid));
+$result = $statement->fetch(PDO::FETCH_ASSOC);
+if ($result["itemid"] == $itemid){
+    header("Location: Additem.php?add=0");
+}
+
 $statement = $db->prepare("INSERT INTO itemdb (itemname,itemid,expansion,url) VALUES (:itemname,:itemid,:expansion,:url)");
 $statement->execute(array(':itemname' => $itemName,':itemid' => $itemid, ':expansion' => $expansion, ':url' => $url));
 
@@ -22,7 +30,9 @@ echo "<br><br>";
 
 foreach ($lines as $line){
     $splitline = split(' ', $line);
-    echo "line split";
+    echo "line split<br>";
+    echo $splitline; echo "<br>";
+    echo $splitline[0]; echo "<br>";
     switch ($splitline[0]){
         case "AC:":
             echo "ac started<br>";
