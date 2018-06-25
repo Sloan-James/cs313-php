@@ -425,6 +425,7 @@ foreach ($lines as $line){
             }
             foreach ($races as $key => $rce){
                 $sql = "UPDATE itemdb SET races[" . ($key+1) . " = '" . $rce . "' WHERE itemid = " . $itemid;
+                echo $sql; echo "<br>";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 //$stmt = $db->prepare("UPDATE itemdb SET races = :races WHERE itemid = :itemid");
