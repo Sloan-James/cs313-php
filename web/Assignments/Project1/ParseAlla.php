@@ -4,27 +4,20 @@ require '../connectDatabase.php';
 include "simple_html_dom.php";
   
 $expansion = $_POST["expansion"];
-echo $expansion;
-echo "<br>";
 
 $url = $_POST["itemLink"];
 $html = new simple_html_dom();
 $html->load_file($url);
-echo "loaded html file<br>";
 $item = $html->find('.nobgrd', 0)->innertext;
-echo "found item stats<br>";
 $itemName = $html->find('.shottitle', 0)->plaintext;
-echo "found item name<br>";
 $spliturl = split("=",$url);
 $itemid = $spliturl[1];
-echo $itemid;
-echo "<br>";
 $statement = $db->prepare("INSERT INTO itemdb (itemname,itemid,expansion,url) VALUES (:itemname,:itemid,:expansion,:url)");
 $statement->execute(array(':itemname' => $itemName,':itemid' => $itemid, ':expansion' => $expansion, ':url' => $url));
 
 $lines = split("<br>",$item);
 
-echo $lines;
+echo $item;
 echo "<br><br>";
 
 foreach ($lines as $line){
