@@ -1,22 +1,22 @@
 <?php
 
 echo '<select name="deity" form="character">
-            <option value="(Hide deity restricted items)">(Hide deity restricted items)</option>
-            <option value="Mithaniel Marr">Mithaniel Marr</option>
-            <option value="Cazic-Thule">Cazic-Thule</option>
-            <option value="Bertoxxulous">Bertoxxulous</option>
-            <option value="Brell Serilis">Brell Serilis</option>
-            <option value="Bristlebane">Bristlebane</option>
-            <option value="Erollisi Marr">Erollisi Marr</option>
-            <option value="Innoruuk">Innoruuk</option>
-            <option value="Karana">Karana</option>
-            <option value="Prexus">Prexus</option>
-            <option value="Quellious">Quellious</option>
-            <option value="Rallos Zek">Rallos Zek</option>
-            <option value="Rodcet Nife">Rodcet Nife</option>
-            <option value="Solusek Ro">Solusek Ro</option>
-            <option value="Tunare">Tunare</option>
-            <option value="The Tribunal">The Tribunal</option>
-            <option value="Agnostic">Agnostic</option>
+            <option value="1">(Hide deity restricted items)</option>
+            <option value="2">Mithaniel Marr</option>
+            <option value="3">Cazic-Thule</option>
+            <option value="4">Bertoxxulous</option>
+            <option value="5">Brell Serilis</option>
+            <option value="6">Bristlebane</option>
+            <option value="7">Erollisi Marr</option>
+            <option value="8">Innoruuk</option>
+            <option value="9">Karana</option>
+            <option value="10">Prexus</option>
+            <option value="11">Quellious</option>
+            <option value="12">Rallos Zek</option>
+            <option value="13">Rodcet Nife</option>
+            <option value="14">Solusek Ro</option>
+            <option value="15">Tunare</option>
+            <option value="16">The Tribunal</option>
+            <option value="17">Agnostic</option>
         </select>';
 

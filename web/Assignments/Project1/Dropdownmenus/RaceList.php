@@ -1,20 +1,20 @@
 <?php
 echo '<select name="race" form="character">
-            <option value="Barbarian">Barbarian</option>
-            <option value="Dark Elf">Dark Elf</option>
-            <option value="Drakkin">Drakkin</option>
-            <option value="Dwarf">Dwarf</option>
-            <option value="Erudite">Erudite</option>
-            <option value="Froglok">Froglok</option>
-            <option value="Gnome">Gnome</option>
-            <option value="Half-Elf">Half-Elf</option>
-            <option value="Halfling">Halfling</option>
-            <option value="High Elf">High Elf</option>
-            <option value="Human">Human</option>
-            <option value="Iksar">Iksar</option>
-            <option value="Ogre">Ogre</option>
-            <option value="Troll">Troll</option>
-            <option value="Vah Shir">Vah Shir</option>
-            <option value="Wood Elf">Wood Elf</option>
+            <option value="1">Barbarian</option>
+            <option value="2">Dark Elf</option>
+            <option value="3">Drakkin</option>
+            <option value="4">Dwarf</option>
+            <option value="5">Erudite</option>
+            <option value="6">Froglok</option>
+            <option value="7">Gnome</option>
+            <option value="8">Half-Elf</option>
+            <option value="9">Halfling</option>
+            <option value="10">High Elf</option>
+            <option value="11">Human</option>
+            <option value="12">Iksar</option>
+            <option value="13">Ogre</option>
+            <option value="14">Troll</option>
+            <option value="15">Vah Shir</option>
+            <option value="16">Wood Elf</option>
         </select>';
 
