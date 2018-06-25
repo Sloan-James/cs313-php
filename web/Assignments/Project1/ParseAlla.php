@@ -291,7 +291,7 @@ foreach ($lines as $line){
             }
             
             foreach ($classes as $key => $cls){
-                $sql = "UPDATE itemdb SET classes[" . ($key+1) . " = '" . $cls . "' WHERE itemid = " . $itemid;
+                $sql = "UPDATE itemdb SET classes[" . ($key+1) . "] = '" . $cls . "' WHERE itemid = " . $itemid;
                 echo $sql . "<br>";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
@@ -429,7 +429,7 @@ foreach ($lines as $line){
                 }
             }
             foreach ($races as $key => $rce){
-                $sql = "UPDATE itemdb SET races[" . ($key+1) . " = '" . $rce . "' WHERE itemid = " . $itemid;
+                $sql = "UPDATE itemdb SET races[" . ($key+1) . "] = '" . $rce . "' WHERE itemid = " . $itemid;
                 echo $sql; echo "<br>";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
