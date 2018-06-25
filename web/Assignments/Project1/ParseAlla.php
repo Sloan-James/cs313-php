@@ -126,6 +126,8 @@ foreach ($lines as $line){
         case "Focus:":
             echo "focus started<br>";
             $link = strstr($line,'<a');
+            $link = strstr($link,'</a>', true);
+            $link = $link . "</a>";
             $stmt = $db->prepare("UPDATE itemdb SET focus = :focus WHERE itemid = :itemid");
             $stmt->execute(array(':focus' => $link, ':itemid' => $itemid));
             echo "focus added<br>";
@@ -133,6 +135,8 @@ foreach ($lines as $line){
         case "Effect:":
             echo "effect started<br>";
             $link = strstr($line,'<a');
+            $link = strstr($link,'</a>',true);
+            $link = $link . "</a>";
             $stmt = $db->prepare("UPDATE itemdb SET effect = :effect WHERE itemid = :itemid");
             $stmt->execute(array(':effect' => $link, ':itemid' => $itemid));
             echo "effect added<br>";
