@@ -125,9 +125,7 @@ foreach ($lines as $line){
             break;
         case "Focus:":
             echo "focus started<br>";
-            $link = strstr($line,'<a>');
-            echo $line . "<br>";
-            echo $link . "<br>";
+            $link = strstr($line,'<a');
             $stmt = $db->prepare("UPDATE itemdb SET focus = :focus WHERE itemid = :itemid");
             $stmt->execute(array(':focus' => $link, ':itemid' => $itemid));
             echo "focus added<br>";
