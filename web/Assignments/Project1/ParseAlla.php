@@ -28,12 +28,12 @@ $lines = split("<br>",$item);
 foreach ($lines as $line){
     echo $line; echo "   !!THE LINE!!<br>";
     $splitline = split(' ', $line);
-    echo $splitline[0]; echo "   !!FIRST WORD!!<br>";
-    switch ($splitline[0]){
+    echo $splitline[1]; echo "   !!FIRST WORD!!<br>";
+    switch ($splitline[1]){
         case "AC:":
             echo "ac started<br>";
             $stmt = $db->prepare("UPDATE itemdb SET ac = :ac WHERE itemid = :itemid");
-             $stmt->execute(array(':ac' => $splitline[1], ':itemid' => $itemid));
+             $stmt->execute(array(':ac' => $splitline[2], ':itemid' => $itemid));
              echo "added ac<br>";
             break;
         case "STR:":
