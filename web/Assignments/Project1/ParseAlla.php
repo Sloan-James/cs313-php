@@ -22,7 +22,10 @@ foreach ($lines as $line){
     $splitline = split(' ', $line);
     switch ($splitline[0]){
         case "AC:":
-            $ac = $splitline[1];
+            echo "ac started<br>";
+            $stmt = $db->prepare("UPDATE itemdb SET ac = :ac WHERE itemid = :itemid");
+             $stmt->execute(array(':ac' => $splitline[1], ':itemid' => $itemid));
+             echo "added ac<br>";
             break;
         case "STR:":
         case "STA:":
@@ -34,6 +37,7 @@ foreach ($lines as $line){
         case "HP:":
         case "MANA:":
         case "ENDUR:":
+            echo "stats started<br>";
             foreach ($splitline as $key => $stat){
                 switch ($stat){
                     case "STR:":
@@ -81,8 +85,10 @@ foreach ($lines as $line){
                         break;
                 }
             }
+            echo "stats added<br>";
             break;
         case "SV":
+            echo "resists started<br>";
             foreach ($splitline as $key => $stat){
                 switch($stat){
                     case "FIRE:":
@@ -108,32 +114,45 @@ foreach ($lines as $line){
                 }
                     
             }
+            echo "resists added<br>";
+            break;
         case "Focus:":
+            echo "focus started<br>";
             $link = strstr($line,'<a>');
             $stmt = $db->prepare("UPDATE itemdb SET focus = :focus WHERE itemid = :itemid");
             $stmt->execute(array(':focus' => $link, ':itemid' => $itemid));
+            echo "focus added<br>";
             break;
         case "Effect:":
+            echo "effect started<br>";
             $link = strstr($line,'<a>');
             $stmt = $db->prepare("UPDATE itemdb SET effect = :effect WHERE itemid = :itemid");
             $stmt->execute(array(':effect' => $link, ':itemid' => $itemid));
+            echo "effect added<br>";
             break;
         case "Haste:";
+            echo "haste started<br>";
             $haste = split('%',$splitline[$key + 1]);
             $stmt = $db->prepare("UPDATE itemdb SET haste = :haste WHERE itemid = :itemid");
             $stmt->execute(array(':haste' => $haste, ':itemid' => $itemid));
+            echo "haste added<br>";
             break;
         case "Mana":// check needs to be combined with attack
+            echo "mana regen started<br>";
             $stmt = $db->prepare("UPDATE itemdb SET manaregen = :manaregen WHERE itemid = :itemid");
             $stmt->execute(array(':manaregen' => $splitline[$key + 2], ':itemid' => $itemid));
+            echo "mana regen added<br>";
             break;
         case "HP":// check needs to be combined with attack
+            echo "hp regen started<br>";
             if( $splitline[$key + 1] === "Regen"){
                 $stmt = $db->prepare("UPDATE itemdb SET hpregen = :hpregen WHERE itemid = :itemid");
                 $stmt->execute(array(':hpregen' => $splitline[$key + 2], ':itemid' => $itemid));
-                break;
             }
+            echo "hp regen added<br>";
+            break;
         case "Class:":
+            echo "classes started<br>";
             $classes = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             $add = true;
             foreach ($splitline as $class){
@@ -260,8 +279,10 @@ foreach ($lines as $line){
             }
             $stmt = $db->prepare("UPDATE itemdb SET classes = :classes WHERE itemid = :itemid");
             $stmt->execute(array(':classes' => $classes, ':itemid' => $itemid));
+            echo "classes added<br>";
             break;
         case "Race:":
+            echo "races started<br>";
             $races = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             $add = true;
             foreach ($splitline as $race){
@@ -388,24 +409,33 @@ foreach ($lines as $line){
             }
             $stmt = $db->prepare("UPDATE itemdb SET races = :races WHERE itemid = :itemid");
             $stmt->execute(array(':races' => $races, ':itemid' => $itemid));
+            echo "races Added<br>";
             break;
         case "Deity:":
             // Add deity check
+            echo "Deity check<br>";
             break;
         case "Slot:":
+            echo "slots started<br>";
             $slots = array();
             foreach ($splitline as $slot){
                 array_push($slots,$slot);
             }
+            $stmt = $db->prepare("UPDATE itemdb SET slots = :slots WHERE itemid = :itemid");
+            $stmt->execute(array(':slots' => $slots, ':itemid' => $itemid));
+            echo "slots added<br>";
             break;
         case "Attack:":
             // add attack check, probably needs to be added with hp/mana checks
+            echo "attack check<br>";
             break;
         case "Skill:":
             // add Skill mod check
+            echo "Skill Mod check<br>";
             break;
         case "DMG:":
             // add Weapon stats
+            echo "weapon stats check<br>";
             break;
             
             
