@@ -26,9 +26,7 @@ $statement->execute(array(':itemname' => $itemName,':itemid' => $itemid, ':expan
 $lines = split("<br>",$item);
 
 foreach ($lines as $line){
-    echo $line; echo "   !!THE LINE!!<br>";
     $splitline = split(' ', $line);
-    echo $splitline[1]; echo "   !!FIRST WORD!!<br>";
     switch ($splitline[1]){
         case "AC:":
             echo "ac started<br>";
@@ -427,8 +425,10 @@ foreach ($lines as $line){
         case "Slot:":
             echo "slots started<br>";
             $slots = array();
-            foreach ($splitline as $slot){
+            echo "array created<br>";
+            for ($i = 1; $i < count($splitline); $i++){
                 array_push($slots,$slot);
+                echo "array push<br>";
             }
             $stmt = $db->prepare("UPDATE itemdb SET slots = :slots WHERE itemid = :itemid");
             $stmt->execute(array(':slots' => $slots, ':itemid' => $itemid));
