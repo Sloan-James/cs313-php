@@ -451,6 +451,6 @@ foreach ($lines as $line){
     }
 }
 
-header('Location: Additem.php?add=1');
+//header('Location: Additem.php?add=1');
 
 
