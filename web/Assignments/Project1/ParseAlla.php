@@ -3,7 +3,7 @@ require '../connectDatabase.php';
 // simple_html_dom is authored by S.C. Chen received from http://simplehtmldom.sourceforge.net/
 include "simple_html_dom.php";
   
-$expansion = $_POST["expansion"];
+//$expansion = $_POST["expansion"];
 
 $url = $_POST["itemLink"];
 echo $url;
@@ -11,9 +11,7 @@ echo "<br>";
 $html = new simple_html_dom();
 $html->load_file($url);
 echo "loaded html file";
-$itemelem = $html->find('.nobgrd', 0);
-echo "got item element";
-$item = $itemelem->innertext;
+$item = $html->find('.nobgrd', 0)->innertext;
 echo "found item stats";
 $itemName = $html->find('.shottitle', 0)->plaintext;
 echo "found item name";
