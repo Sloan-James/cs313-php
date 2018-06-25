@@ -167,6 +167,7 @@ foreach ($lines as $line){
             $add = true;
             foreach ($splitline as $class){
                 echo "starting switch (class)<br>";
+                echo $class . "<br>";
                 switch ($class){
                     case "BRD":
                         if ($add){
@@ -288,8 +289,10 @@ foreach ($lines as $line){
                         break;
                 }
             }
+            
             foreach ($classes as $key => $cls){
                 $sql = "UPDATE itemdb SET classes[" . ($key+1) . " = '" . $cls . "' WHERE itemid = " . $itemid;
+                echo $sql . "<br>";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 //$stmt = $db->prepare("UPDATE itemdb SET classes = :classes WHERE itemid = :itemid");
