@@ -140,8 +140,9 @@ foreach ($lines as $line){
         case "Haste:";
             echo "haste started<br>";
             $haste = split('%',$splitline[$key + 2]);
+            echo $haste . "<br>";
             $stmt = $db->prepare("UPDATE itemdb SET haste = :haste WHERE itemid = :itemid");
-            $stmt->execute(array(':haste' => $haste, ':itemid' => $itemid));
+            $stmt->execute(array(':haste' => $haste[0], ':itemid' => $itemid));
             echo "haste added<br>";
             break;
         case "Mana":// check needs to be combined with attack
