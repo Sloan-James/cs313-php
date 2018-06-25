@@ -287,8 +287,14 @@ foreach ($lines as $line){
                         break;
                 }
             }
-            $stmt = $db->prepare("UPDATE itemdb SET classes = :classes WHERE itemid = :itemid");
-            $stmt->execute(array(':classes' => $classes, ':itemid' => $itemid));
+            foreach ($classes as $key => $cls){
+                $sql = "UPDATE itemdb SET classes[" . ($key+1) . " = '" . $cls . "' WHERE itemid = " . $itemid;
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                //$stmt = $db->prepare("UPDATE itemdb SET classes = :classes WHERE itemid = :itemid");
+                //$stmt->execute(array(':classes' => $classes, ':itemid' => $itemid));
+            }
+            
             echo "classes added<br>";
             break;
         case "Race:":
@@ -417,8 +423,14 @@ foreach ($lines as $line){
                         break;
                 }
             }
-            $stmt = $db->prepare("UPDATE itemdb SET races = :races WHERE itemid = :itemid");
-            $stmt->execute(array(':races' => $races, ':itemid' => $itemid));
+            foreach ($races as $key => $rce){
+                $sql = "UPDATE itemdb SET races[" . ($key+1) . " = '" . $rce . "' WHERE itemid = " . $itemid;
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+                //$stmt = $db->prepare("UPDATE itemdb SET races = :races WHERE itemid = :itemid");
+                //$stmt->execute(array(':races' => $races, ':itemid' => $itemid));
+            }
+            
             echo "races Added<br>";
             break;
         case "Deity:":
