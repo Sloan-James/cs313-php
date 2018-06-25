@@ -139,7 +139,7 @@ foreach ($lines as $line){
             break;
         case "Haste:";
             echo "haste started<br>";
-            $haste = split('%',$splitline[$key + 1]);
+            $haste = split('%',$splitline[$key + 2]);
             $stmt = $db->prepare("UPDATE itemdb SET haste = :haste WHERE itemid = :itemid");
             $stmt->execute(array(':haste' => $haste, ':itemid' => $itemid));
             echo "haste added<br>";
@@ -155,9 +155,9 @@ foreach ($lines as $line){
             break;
         case "HP":// check needs to be combined with attack
             echo "hp regen started<br>";
-            if( $splitline[$key + 1] === "Regen"){
+            if( $splitline[$key + 2] === "Regen"){
                 $stmt = $db->prepare("UPDATE itemdb SET hpregen = :hpregen WHERE itemid = :itemid");
-                $stmt->execute(array(':hpregen' => $splitline[$key + 2], ':itemid' => $itemid));
+                $stmt->execute(array(':hpregen' => $splitline[$key + 3], ':itemid' => $itemid));
             }
             echo "hp regen added<br>";
             break;
