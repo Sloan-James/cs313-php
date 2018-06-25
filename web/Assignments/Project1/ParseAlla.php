@@ -424,10 +424,10 @@ foreach ($lines as $line){
             break;
         case "Slot:":
             echo "slots started<br>";
-            for ($i = 1; $i < count($splitline); $i++){
+            for ($i = 2; $i < count($splitline); $i++){
                 echo "slot " . $i . " adding<br>";
                 echo $splitline[$i] . "<br>";
-                $stmt = $db->prepare("UPDATE itemdb SET slots = :slots WHERE itemid = :itemid");
+                $stmt = $db->prepare("UPDATE itemdb SET slots[" . $i-1 . "] = ':slots' WHERE itemid = :itemid");
                 $stmt->execute(array(':slots' => $splitline[$i], ':itemid' => $itemid));
                 echo "slot " . $i . " added<br>";
             }
