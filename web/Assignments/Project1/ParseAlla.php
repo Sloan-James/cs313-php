@@ -132,7 +132,7 @@ foreach ($lines as $line){
             break;
         case "Effect:":
             echo "effect started<br>";
-            $link = strstr($line,'<a>');
+            $link = strstr($line,'<a');
             $stmt = $db->prepare("UPDATE itemdb SET effect = :effect WHERE itemid = :itemid");
             $stmt->execute(array(':effect' => $link, ':itemid' => $itemid));
             echo "effect added<br>";
