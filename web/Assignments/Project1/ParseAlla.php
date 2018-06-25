@@ -22,6 +22,7 @@ echo "<br><br>";
 
 foreach ($lines as $line){
     $splitline = split(' ', $line);
+    echo "line split";
     switch ($splitline[0]){
         case "AC:":
             echo "ac started<br>";
