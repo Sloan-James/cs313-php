@@ -4,17 +4,17 @@ require '../connectDatabase.php';
 include "simple_html_dom.php";
   
 $expansion = $_POST["expansion"];
+echo $expansion;
+echo "<br>";
 
 $url = $_POST["itemLink"];
-echo $url;
-echo "<br>";
 $html = new simple_html_dom();
 $html->load_file($url);
-echo "loaded html file";
+echo "loaded html file<br>";
 $item = $html->find('.nobgrd', 0)->innertext;
-echo "found item stats";
+echo "found item stats<br>";
 $itemName = $html->find('.shottitle', 0)->plaintext;
-echo "found item name";
+echo "found item name<br>";
 $spliturl = split("=",$url);
 $itemid = $spliturl[1];
 echo $itemid;
