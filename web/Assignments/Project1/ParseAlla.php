@@ -172,8 +172,6 @@ foreach ($lines as $line){
             $classes = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             $add = true;
             foreach ($splitline as $class){
-                echo "starting switch (class)<br>";
-                echo $class . "<br>";
                 switch ($class){
                     case "BRD":
                         if ($add){
@@ -298,7 +296,6 @@ foreach ($lines as $line){
             
             foreach ($classes as $key => $cls){
                 $sql = "UPDATE itemdb SET classes[" . ($key+1) . "] = '" . $cls . "' WHERE itemid = " . $itemid;
-                echo $sql . "<br>";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 //$stmt = $db->prepare("UPDATE itemdb SET classes = :classes WHERE itemid = :itemid");
@@ -312,7 +309,6 @@ foreach ($lines as $line){
             $races = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             $add = true;
             foreach ($splitline as $race){
-                echo "starting switch (race)<br>";
                 switch ($race){
                     case "BAR":
                         if ($add){
@@ -436,7 +432,6 @@ foreach ($lines as $line){
             }
             foreach ($races as $key => $rce){
                 $sql = "UPDATE itemdb SET races[" . ($key+1) . "] = '" . $rce . "' WHERE itemid = " . $itemid;
-                echo $sql; echo "<br>";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 //$stmt = $db->prepare("UPDATE itemdb SET races = :races WHERE itemid = :itemid");
@@ -483,6 +478,6 @@ foreach ($lines as $line){
     }
 }
 
-//header('Location: Additem.php?add=1');
+header('Location: Additem.php?add=1');
 
 
