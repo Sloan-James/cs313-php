@@ -29,9 +29,8 @@ echo $item;
 echo "<br><br>";
 
 foreach ($lines as $line){
+    echo $line; echo "<br>";
     $splitline = split(' ', $line);
-    echo "line split<br>";
-    echo $splitline; echo "<br>";
     echo $splitline[0]; echo "<br>";
     switch ($splitline[0]){
         case "AC:":
