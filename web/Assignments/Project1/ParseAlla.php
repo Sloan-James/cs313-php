@@ -444,7 +444,7 @@ foreach ($lines as $line){
             // add attack check, probably needs to be added with hp/mana checks
             echo "attack check<br>";
             break;
-        case "Skill:":
+        case "Skill Mod:":
             // add Skill mod check
             echo "Skill Mod check<br>";
             break;
@@ -452,11 +452,13 @@ foreach ($lines as $line){
             // add Weapon stats
             echo "weapon stats check<br>";
             break;
-            
+        case "Skill:":
+            echo "weapon skill check<br>";
+            break;
             
     }
 }
 
-//header('Location: Additem.php?add=1');
+header('Location: Additem.php?add=1');
 
 
