@@ -6,6 +6,8 @@ include "simple_html_dom.php";
 $expansion = $_POST["expansion"];
 
 $url = $_POST["itemLink"];
+echo $url;
+echo "<br>";
 $html = new simple_html_dom();
 $html->load_file($url);
 echo "loaded html file";
