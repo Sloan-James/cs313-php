@@ -25,13 +25,10 @@ $statement->execute(array(':itemname' => $itemName,':itemid' => $itemid, ':expan
 
 $lines = split("<br>",$item);
 
-echo $item;
-echo "<br><br>";
-
 foreach ($lines as $line){
-    echo $line; echo "<br>";
+    echo $line; echo "   !!THE LINE!!<br>";
     $splitline = split(' ', $line);
-    echo $splitline[0]; echo "<br>";
+    echo $splitline[0]; echo "   !!FIRST WORD!!<br>";
     switch ($splitline[0]){
         case "AC:":
             echo "ac started<br>";
