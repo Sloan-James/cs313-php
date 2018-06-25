@@ -166,6 +166,7 @@ foreach ($lines as $line){
             $classes = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             $add = true;
             foreach ($splitline as $class){
+                echo "starting switch (class)<br>";
                 switch ($class){
                     case "BRD":
                         if ($add){
@@ -302,6 +303,7 @@ foreach ($lines as $line){
             $races = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
             $add = true;
             foreach ($splitline as $race){
+                echo "starting switch (race)<br>";
                 switch ($race){
                     case "BAR":
                         if ($add){
