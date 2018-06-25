@@ -139,8 +139,9 @@ foreach ($lines as $line){
             break;
         case "Haste:";
             echo "haste started<br>";
+            echo $splitline[$key + 2] . "<br>";
             $haste = split('%',$splitline[$key + 2]);
-            echo $haste[0] . "<br>";
+            echo $haste[1] . "<br>";
             $stmt = $db->prepare("UPDATE itemdb SET haste = :haste WHERE itemid = :itemid");
             $stmt->execute(array(':haste' => $haste[0], ':itemid' => $itemid));
             echo "haste added<br>";
