@@ -8,9 +8,10 @@ $expansion = $_POST["expansion"];
 $url = $_POST["itemLink"];
 $html = new simple_html_dom();
 $html->load_file($url);
-
+echo "loaded html file";
 $item = $html->find('.nobgrd', 0)->innertext;
 $itemName = $html->find('.shottitle', 0)->innertext;
+echo "found item name";
 $spliturl = split("=",$url);
 $itemid = $spliturl[1];
 echo $itemid;
