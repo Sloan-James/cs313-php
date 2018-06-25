@@ -22,6 +22,7 @@ and open the template in the editor.
             <br>
             <br>
             <input type="submit" value="Save">
+            <a href='Prove06.php'><button>Back</button></a>
         </form>
     </body>
 </html>

@@ -125,5 +125,6 @@ if (!isset($_COOKIE["user"])){
         <form method="post" action="logout.php">
             <input type="submit" value="logout">
         </form>
+        <a href='Additem.php'><button>Add Items</button></a>
     </body>
 </html>
