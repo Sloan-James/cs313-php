@@ -427,7 +427,7 @@ foreach ($lines as $line){
             for ($i = 2; $i < count($splitline); $i++){
                 echo "slot " . $i . " adding<br>";
                 echo $splitline[$i] . "<br>";
-                $sql = "UPDATE itemdb SET slots[" . $i-1 . "] = '" . $splitline[$i] . "' WHERE itemid = " . $itemid;
+                $sql = "UPDATE itemdb SET slots[" . $i . "] = '" . $splitline[$i] . "' WHERE itemid = " . $itemid;
                 echo $sql . "<br>";
                 //$stmt = $db->prepare("UPDATE itemdb SET :slotarray = ':slots' WHERE itemid = :itemid");
                 //$stmt->execute(array(':slots' => $splitline[$i], ':itemid' => $itemid));
