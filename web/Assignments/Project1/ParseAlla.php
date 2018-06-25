@@ -140,7 +140,7 @@ foreach ($lines as $line){
         case "Haste:";
             echo "haste started<br>";
             $haste = split('%',$splitline[$key + 2]);
-            echo $haste . "<br>";
+            echo $haste[0] . "<br>";
             $stmt = $db->prepare("UPDATE itemdb SET haste = :haste WHERE itemid = :itemid");
             $stmt->execute(array(':haste' => $haste[0], ':itemid' => $itemid));
             echo "haste added<br>";
