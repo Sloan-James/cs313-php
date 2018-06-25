@@ -11,7 +11,7 @@ echo "<br>";
 $html = new simple_html_dom();
 $html->load_file($url);
 echo "loaded html file";
-$item = $html->find('.nobgrd', 0)->innertext;
+$item = $html->find('.nobgrd', 0)->plaintext;
 echo "found item stats";
 $itemName = $html->find('.shottitle', 0)->plaintext;
 echo "found item name";
