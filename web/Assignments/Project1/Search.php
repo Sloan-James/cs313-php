@@ -26,5 +26,6 @@ session_start();
                 echo "<a src='" . $item["url"] ."' >". $item["itemName"] . "</a><br>";
             }
         ?>
+        <span class="error"><?php echo $_SESSION["items"]["error"];?></span>
     </body>
 </html>

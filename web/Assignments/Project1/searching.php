@@ -21,6 +21,9 @@ echo "executed statement<br>";
 
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+if (empty($rows)){
+    $_SESSION["items"]["error"] = "Nothing Found. More items needed in database";
+}
 foreach ($rows as $key => $row){
     $_SESSION["items"][$key]["link"] = $row["url"];
     $_SESSION["items"][$key]["itemName"] = $row["itemname"];
