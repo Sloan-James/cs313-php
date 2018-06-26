@@ -27,7 +27,7 @@ session_start();
             
         </form>
         <br>
-        <a href='Additem.php'><button>Add Items</button></a>
-        <a href='Search.php'><button>Search Items</button</a>
+        <a href='Additem.php'><button formaction="Additem.php">Add Items</button></a>
+        <a href='Search.php'><button formaction="Search.php">Search Items</button</a>
     </body>
 </html>
