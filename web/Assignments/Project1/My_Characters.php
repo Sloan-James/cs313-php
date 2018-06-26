@@ -126,5 +126,6 @@ if (!isset($_COOKIE["user"])){
             <input type="submit" value="logout">
         </form>
         <a href='Additem.php'><button>Add Items</button></a>
+        <a href='Search.php'><button>Search Items</button></a>
     </body>
 </html>
