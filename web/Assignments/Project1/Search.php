@@ -22,8 +22,9 @@ session_start();
         <br>
         <br>
         <?php
+            
             foreach ($_SESSION["items"] as $item){
-                echo "<a src='" . $item["url"] ."' >". $item["itemName"] . "</a><br>";
+                echo "<a src='" . $item["link"] ."' >". $item["itemName"] . "</a><br>";
             }
         ?>
         <span class="error"><?php echo $_SESSION["items"]["error"];?></span>
