@@ -4,7 +4,7 @@ require '../connectDatabase.php';
 
 if(empty($_POST["username"])){
     $_SESSION['error'] = "Input username and password";
-    header('Location: Prove06.php');
+    header('Location: Project01.php');
     exit;
 } else {
     $_SESSION['error'] = "";
@@ -13,7 +13,7 @@ if(empty($_POST["username"])){
 
 if (empty($_POST["password"])){
     $_SESSION['error'] = "Input username and password";
-    header('Location: Prove06.php');
+    header('Location: Project01.php');
     exit;
 } else {
     $_SESSION['error'] = "";
@@ -32,6 +32,6 @@ if( password_verify($pass, $row['password'])){
     exit;
 } else {
     $_SESSION['error'] = "Incorrect username/password";
-    header('Location: Prove06.php');
+    header('Location: Project01.php');
     exit;
 }

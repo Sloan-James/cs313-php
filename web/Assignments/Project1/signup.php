@@ -4,7 +4,7 @@ require '../connectDatabase.php';
 
 if(empty($_POST["username"])){
     $_SESSION['error'] = "Username/Password Required";
-    header('Location: Prove06.php');
+    header('Location: Project01.php');
     exit;
 } else {
     $_SESSION['error'] = "";
@@ -13,7 +13,7 @@ if(empty($_POST["username"])){
 
 if (empty($_POST["password"])){
     $_SESSION['error'] = "Username/Password Required";
-    header('Location: Prove06.php');
+    header('Location: Project01.php');
     exit;
 } else {
     $_SESSION['error'] = "";
@@ -32,10 +32,10 @@ if($row['username'] != $user){
     $stmt = $db->prepare("INSERT INTO users (username,password) VALUES (:user,:pass)");
     $stmt->execute(array(':user' => $user,':pass' => pass));
     $_SESSION['signup'] = "Sign up successful";
-    header ('Location: Prove06.php');
+    header ('Location: Project01.php');
     exit;
 } else {
     $_SESSION['error'] = "Username in use";
-    header('Location: Prove06.php');
+    header('Location: Project01.php');
     exit;
 }
