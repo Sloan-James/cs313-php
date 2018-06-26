@@ -26,3 +26,4 @@ foreach ($rows as $key => $row){
     $_SESSION["items"][$key]["itemName"] = $row["itemname"];
 }
             
+header("Location: Search.php");
