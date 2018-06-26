@@ -30,7 +30,7 @@ echo $row['username'];
 
 if($row['username'] != $user){
     $stmt = $db->prepare("INSERT INTO users (username,password) VALUES (:user,:pass)");
-    $stmt->execute(array(':user' => $user,':pass' => pass));
+    $stmt->execute(array(':user' => $user,':pass' => $pass));
     $_SESSION['signup'] = "Sign up successful";
     header ('Location: Project01.php');
     exit;

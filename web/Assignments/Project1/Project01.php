@@ -29,9 +29,6 @@ session_start();
         <br>
         <a href='Additem.php'><button formaction="Additem.php">Add Items</button></a>
         <a href='Search.php'><button formaction="Search.php">Search Items</button</a>
-        <?php
-            $test = password_hash("testing", PASSWORD_DEFAULT);
-            echo $test;
-        ?>
+        <br>
     </body>
 </html>
