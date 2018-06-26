@@ -19,6 +19,7 @@ session_start();
             ?>
             <input type='submit' value='Search'>
         </form>
+        <a href="Project01.php"><button>Back</button></a>
         <br>
         <br>
         <?php
