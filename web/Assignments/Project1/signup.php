@@ -17,7 +17,7 @@ if (empty($_POST["password"])){
     exit;
 } else {
     $_SESSION['error'] = "";
-    $pass = $_POST["password"];
+    $pass = password_hash($_POST["password"],PASSWORD_DEFAULT);
 }
 
 $stmt = $db->prepare('SELECT username FROM users WHERE username = :user');
@@ -29,7 +29,6 @@ $row = $stmt->fetch(PDO::FETCH_ASSOC);
 echo $row['username'];
 
 if($row['username'] != $user){
-    // needs password encryption
     $stmt = $db->prepare("INSERT INTO users (username,password) VALUES (:user,:pass)");
     $stmt->execute(array(':user' => $user,':pass' => pass));
     $_SESSION['signup'] = "Sign up successful";

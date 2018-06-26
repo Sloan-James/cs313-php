@@ -26,8 +26,7 @@ $stmt->execute(array(':user' => $user));
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 // Password not currently saved securely
-if( $row['password'] == $pass)
-{
+if( password_verify($pass, $row['password'])){
     setcookie("user",$user,time() + (86400 * 30), '/');
     header('Location: My_Characters.php');
     exit;
