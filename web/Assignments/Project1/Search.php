@@ -19,9 +19,11 @@ session_start();
             ?>
             <input type='submit' value='Search'>
         </form>
+        <br>
+        <br>
         <?php
             foreach ($_SESSION["items"] as $item){
-                echo "<a src='" . $item["url"] ."' >". $item["itemName"] . "</a>";
+                echo "<a src='" . $item["url"] ."' >". $item["itemName"] . "</a><br>";
             }
         ?>
     </body>
